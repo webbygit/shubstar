@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="white_trans" type="color">#66FFFFFF</item>
+    <item name="white_trans_dark" type="color">#AAFFFFFF</item>
+    <item name="white_trans_light" type="color">#20FFFFFF</item>
+    <item name="white_trans_light_extra" type="color">#18FFFFFF</item>
+    <item name="white_trans_dark_extra" type="color">#CCFFFFFF</item>
+    <item name="black_trans" type="color">#40000000</item>
+    <item name="black_trans_dark" type="color">#80000000</item>
+    <item name="black_trans_dark_extra" type="color">#AA000000</item>
+    <item name="green_trans" type="color">#401BA261</item>
+    <item name="black_trans_light" type="color">#20000000</item>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="primary_light">#C5CAE9</color>
+    <color name="colorAccent">#448AFF</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+
+
+    <color name="colorPrimaryLight">#203F51B5</color>
+    <color name="colorPrimaryLightExtra">#103F51B5</color>
+
+    <item name="grey" type="color">#797979</item>
+</resources>

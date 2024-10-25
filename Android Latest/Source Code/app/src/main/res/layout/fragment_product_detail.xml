@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_cart"
+    android:orientation="vertical">
+
+
+    <!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">-->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/product_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        tools:context="com.salestrackmobileapp.android.fragments.ProductDetailFragment"></android.support.v4.view.ViewPager>
+
+
+    <ImageButton
+        android:id="@+id/left_nav"
+        android:layout_width="35dp"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+
+        android:layout_marginTop="91dp"
+
+        android:background="@color/bg_cart"
+        android:src="@drawable/slider_icon_left"
+        android:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/right_nav"
+        android:layout_width="35dp"
+        android:layout_height="45dp"
+        android:layout_alignParentRight="true"
+
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="91dp"
+
+
+        android:background="@color/bg_cart"
+        android:src="@drawable/slider_icon_right"
+        android:visibility="visible" />
+
+
+    <com.salestrackmobileapp.android.custome_views.Custome_BoldTextView
+        android:id="@+id/continue_txt"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="bottom"
+        android:background="@color/colorDark"
+        android:gravity="center"
+        android:text="Continue to Cart"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+
+</RelativeLayout>

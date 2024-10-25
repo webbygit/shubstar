@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/back_white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/back_white"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="20dp"
+            android:weightSum="1">
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/item_name_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.5"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/qty_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_weight="0.5"
+                android:gravity="center_horizontal"
+                android:text="Quantity"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/red" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="25dp"
+            android:paddingRight="20dp"
+            android:paddingTop="5dp"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+
+                <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Base Price :"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/red" />
+
+                <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                    android:id="@+id/base_price_vl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="kdc"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/qty_vl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_weight="0.5"
+                android:gravity="center_horizontal"
+                android:text="12"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                    android:id="@+id/dsct_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Discount :"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/red" />
+
+                <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                    android:id="@+id/dsct_vl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/sub_ttl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_weight="0.5"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="Sub Total"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/red" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                    android:id="@+id/after_discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price :"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/red" />
+
+                <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                    android:id="@+id/price_vl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/sub_ttl_vl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_weight="0.5"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <!--   <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:paddingLeft="20dp"
+               android:paddingRight="20dp"
+               android:layout_marginLeft="20dp"
+               android:padding="5dp"
+               android:orientation="horizontal">
+
+                   <com.example.kanchan.salestrakerapp.custome_views.Custome_TextView
+                       android:id="@+id/vat_tv"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:titleDips="Vat Price:"
+                       android:textAppearance="?android:textAppearanceSmall"
+                       android:textColor="@color/Red" />
+
+                   <com.example.kanchan.salestrakerapp.custome_views.Custome_TextView
+                       android:id="@+id/vat_vl"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginLeft="10dp"
+                       android:titleDips="1200"
+                       android:textAppearance="?android:textAppearanceSmall"
+                       android:textColor="@color/black" />
+
+
+           </LinearLayout>-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

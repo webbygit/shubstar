@@ -1,0 +1,6 @@
+framework module Pods_SalesTrack {
+  umbrella header "Pods-SalesTrack-umbrella.h"
+
+  export *
+  module * { export * }
+}

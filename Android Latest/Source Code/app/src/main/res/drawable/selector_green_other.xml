@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <gradient android:angle="270" android:centerColor="@color/add_order_green" android:centerX="0.9" android:endColor="@color/add_order_green" android:startColor="@color/add_order_green" />
+            <corners android:radius="3dp" />
+            <padding android:bottom="0dp" android:left="0dp" android:right="0dp" android:top="0dp" />
+        </shape>
+    </item>
+
+    <item android:state_focused="true">
+        <shape>
+            <gradient android:angle="270" android:centerColor="@color/add_order_green_two" android:centerX="0.9" android:endColor="@color/add_order_green_two" android:startColor="@color/add_order_green_two" />
+            <corners android:radius="3dp" />
+            <padding android:bottom="0dp" android:left="0dp" android:right="0dp" android:top="0dp" />
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <gradient android:angle="270" android:centerColor="@color/add_order_green_two" android:centerX="0.9" android:endColor="@color/add_order_green_two" android:startColor="@color/add_order_green_two" />
+            <corners android:radius="3dp" />
+            <padding android:bottom="0dp" android:left="0dp" android:right="0dp" android:top="0dp" />
+        </shape>
+    </item>
+
+</selector>

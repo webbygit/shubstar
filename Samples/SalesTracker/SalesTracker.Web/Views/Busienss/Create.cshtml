@@ -1,0 +1,168 @@
+﻿@model SalesTracker.Model.Business
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Business</legend>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.BusinessCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BusinessCode)
+            @Html.ValidationMessageFor(model => model.BusinessCode)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BusinessName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BusinessName)
+            @Html.ValidationMessageFor(model => model.BusinessName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LogoMID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LogoMID)
+            @Html.ValidationMessageFor(model => model.LogoMID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address1)
+            @Html.ValidationMessageFor(model => model.Address1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address2)
+            @Html.ValidationMessageFor(model => model.Address2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.City)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.City)
+            @Html.ValidationMessageFor(model => model.City)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.State)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.State)
+            @Html.ValidationMessageFor(model => model.State)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZipCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZipCode)
+            @Html.ValidationMessageFor(model => model.ZipCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Country)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Country)
+            @Html.ValidationMessageFor(model => model.Country)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GeoLat)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GeoLat)
+            @Html.ValidationMessageFor(model => model.GeoLat)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GeoLon)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GeoLon)
+            @Html.ValidationMessageFor(model => model.GeoLon)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApprovalStatusLookupID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApprovalStatusLookupID)
+            @Html.ValidationMessageFor(model => model.ApprovalStatusLookupID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsActive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactName)
+            @Html.ValidationMessageFor(model => model.ContactName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Website)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Website)
+            @Html.ValidationMessageFor(model => model.Website)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

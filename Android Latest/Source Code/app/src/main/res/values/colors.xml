@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#7899E6</color>
+    <color name="colorPrimaryDark">#507AEB</color>
+    <color name="colorDark">#395dbf</color>
+    <color name="colorAccent">#7899E6</color>
+    <color name="fade_color">#83a4f1</color>
+
+<!--#29499e-->
+    <color name="black">#000000</color>
+    <color name="blackCart">#494949</color>
+    <color name="white">#ffffff</color>
+    <color name="grey">#a8a8aa</color>
+    <color name="gray">#808080</color>
+    <color name="light_gray">#d1d1d1</color>
+    <color name="lightest_gray">#ECF0F1</color>
+    <color name="back_white">#f8f8ff</color>
+    <color name="plus_bg">#E9E9E9</color>
+    <color name="silver_gray">#c3c3c3</color>
+
+    <color name="transback">#f2f2ff</color>
+    <color name="dark_dim_gray">#696969</color>
+    <color name="gray_underline">#f3f3f4</color>
+    <color name="green">#008000</color>
+    <color name="green_light">#4CAF50</color>
+    <color name="add_order_green">#00B253</color>
+    <color name="add_order_green_two">#00A046</color>
+    <color name="red">#ff0000</color>
+    <color name="red_light">#F44336</color>
+    <color name="grey_menu_icon">#919191</color>
+    <!--<color name="red_light_two">#F44336</color>-->
+
+    <color name="yellow">#FFFFCC</color>
+    <color name="yellow_border">#F5DEBE</color>
+
+    <!--tableview colors-->
+    <color name="selected_background_color">#ffffff</color>
+    <color name="unselected_background_color">#ffffff</color>
+    <color name="shadow_background_color">#ffffff</color>
+    <color name="unselected_header_background_color">#ffffff</color>
+
+    <color name="unselected_text_color">#000000</color>
+    <color name="unselected_text_color_header">#000000</color>
+    <color name="selected_text_color">#000000</color>
+    <color name="separator_color">#a8a8aa</color>
+
+    <color name="popup_menu_item_text_color">#88a5c9</color>
+
+    <color name="female_icon_color">#e9515f</color>
+    <color name="male_icon_color">#f28944</color>
+    <!--cart scrreen colors-->
+    <color name="bg_cart">#ececec</color>
+
+
+
+    <!--#ff0000-->
+</resources>
+

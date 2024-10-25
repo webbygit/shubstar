@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.salestrackmobileapp.android">
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name="com.salestrackmobileapp.android.activities.ApplicationClass"
+        android:allowBackup="true"
+        android:icon="@drawable/logo2"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/logo2"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Design.NoActionBar"
+        tools:node="merge">
+        <meta-data
+            android:name="DATABASE"
+            android:value="sales_track.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="false" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.salestrackmobileapp.android" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <receiver
+            android:name="com.salestrackmobileapp.android.services.BootCompleted"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+        <!--<receiver android:name="com.example.kanchan.salestrackmobile.activities.DashboardActivity$NetworkChangeReceiver" >-->
+        <!--<intent-filter>-->
+            <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />-->
+
+        <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <service android:name="com.salestrackmobileapp.android.services.AndroidStartServiceOnBoot" />
+        <service android:name="com.salestrackmobileapp.android.services.MyFirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <!-- [START firebase_iid_service] -->
+        <service android:name="com.salestrackmobileapp.android.services.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.salestrackmobileapp.android.activities.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.salestrackmobileapp.android.activities.ProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.salestrackmobileapp.android.activities.DashboardActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop">
+
+
+        </activity>
+        <activity
+            android:name="com.salestrackmobileapp.android.activities.GoalsActivities"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity
+            android:name="com.salestrackmobileapp.android.activities.TermAndConditionActivity"
+            android:parentActivityName="com.salestrackmobileapp.android.activities.MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.salestrackmobileapp.android.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.salestrackmobileapp.android.activities.SubMyGoalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.salestrackmobileapp.android.activities.BaseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.salestrackmobileapp.android.activities.CheckInActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.salestrackmobileapp.android.activities.ForgetPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.salestrackmobileapp.android.activities.TakeOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.salestrackmobileapp.android.activities.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name="com.salestrackmobileapp.android.activities.MapsActivity"
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name="com.salestrackmobileapp.android.services.LocationService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="1000">
+                <action android:name="android.location.PROVIDERS_CHANGED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="ff9178b80989cc534193ad7b050a21291b3d9e36" />
+
+
+        <activity
+            android:name="com.salestrackmobileapp.android.activities.ConfirmOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.salestrackmobileapp.android.activities.VisitedBusinessActivity" />
+        <activity
+            android:name="com.salestrackmobileapp.android.activities.NotificationActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            </activity>
+           <activity android:name="com.salestrackmobileapp.android.activities.ProductDetailActivity"></activity>
+    </application>
+
+</manifest>

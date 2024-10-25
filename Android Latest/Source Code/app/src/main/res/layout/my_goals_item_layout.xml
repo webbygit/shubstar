@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="0.7"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/main_goal_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Main Title"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/black" />
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/tvGoalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Sub Title"
+                android:textColor="@color/black" />
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/tvGoalAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Sub Title"
+                android:textColor="@color/black" />
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/tvGoalQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Sub Title"
+                android:textColor="@color/black" />
+
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/sub_goal_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Sub Title"
+                android:textColor="@color/black" />
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/start_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="ss"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/dark_dim_gray" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/visited_ck"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:checked="true"
+            android:enabled="false"
+            android:gravity="center" />
+
+        <ImageView
+            android:id="@+id/proceed_img"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_weight="0.1"
+            android:src="@drawable/arrow" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

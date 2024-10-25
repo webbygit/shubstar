@@ -1,0 +1,40 @@
+﻿@model SalesTracker.Model.Company
+
+@{
+    ViewBag.Title = "Info";
+}
+
+<h2>Info</h2>
+
+<fieldset>
+    <legend>Company</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DomainName) : @Html.DisplayFor(model => model.DomainName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedBy) : @Html.DisplayFor(model => model.CreatedBy)
+    </div>
+    
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedDate) : @Html.DisplayFor(model => model.CreatedDate)
+    </div>
+    
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UpdatedBy) : @Html.DisplayFor(model => model.UpdatedBy)
+    </div>
+    
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UpdatedDate) : @Html.DisplayFor(model => model.UpdatedDate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Create User", "Register", "User", null, new { id = Model.ID }) |
+   
+    @Html.ActionLink("Back to List", "Index")
+</p>

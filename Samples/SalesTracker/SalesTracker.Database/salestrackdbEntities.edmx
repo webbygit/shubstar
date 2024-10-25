@@ -1,0 +1,1536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="salestrackdbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="brands">
+          <Key>
+            <PropertyRef Name="BrandID" />
+          </Key>
+          <Property Name="BrandID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BrandName" Type="varchar" MaxLength="150" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="Category" Type="varchar" MaxLength="150" />
+          <Property Name="ImageName" Type="varchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bool" />
+          <Property Name="CreatedOn" Type="datetime" Precision="0" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+          <Property Name="ModifiedOn" Type="datetime" Precision="0" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="business">
+          <Key>
+            <PropertyRef Name="BusinessID" />
+          </Key>
+          <Property Name="BusinessID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BusnessName" Type="varchar" MaxLength="200" />
+          <Property Name="Address1" Type="varchar" MaxLength="1000" />
+          <Property Name="Address2" Type="varchar" MaxLength="1000" />
+          <Property Name="City" Type="varchar" MaxLength="200" />
+          <Property Name="State" Type="varchar" MaxLength="200" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="20" />
+          <Property Name="Country" Type="varchar" MaxLength="100" />
+          <Property Name="WebsiteName" Type="varchar" MaxLength="100" />
+          <Property Name="ContactPersonName" Type="varchar" MaxLength="150" />
+          <Property Name="ContactPersonPhone" Type="varchar" MaxLength="45" />
+          <Property Name="ContactPersonEmail" Type="varchar" MaxLength="150" />
+          <Property Name="UserProfileID" Type="bigint" />
+          <Property Name="CreatedOn" Type="datetime" Precision="0" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+          <Property Name="ModifiedOn" Type="datetime" Precision="0" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="100" />
+          <Property Name="ImageName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="deal_product_mapping">
+          <Key>
+            <PropertyRef Name="DealProductID" />
+          </Key>
+          <Property Name="DealProductID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DealID" Type="bigint" />
+          <Property Name="ProductID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="deals">
+          <Key>
+            <PropertyRef Name="DealID" />
+          </Key>
+          <Property Name="DealID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserProfileID" Type="bigint" />
+          <Property Name="StartDate" Type="datetime" Precision="0" />
+          <Property Name="EndDate" Type="datetime" Precision="0" />
+          <Property Name="DealType" Type="varchar" MaxLength="50" />
+          <Property Name="DealApplicableAs" Type="varchar" MaxLength="45" />
+          <Property Name="DealDescription" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="features">
+          <Key>
+            <PropertyRef Name="FeatureID" />
+          </Key>
+          <Property Name="FeatureID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FeatureTitle" Type="varchar" MaxLength="45" />
+          <Property Name="FeatureURL" Type="varchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bool" />
+        </EntityType>
+        <EntityType Name="plan_detail">
+          <Key>
+            <PropertyRef Name="PlanDetailID" />
+          </Key>
+          <Property Name="PlanDetailID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlanID" Type="bigint" />
+          <Property Name="FeatureID" Type="bigint" />
+          <Property Name="IsActive" Type="bool" />
+        </EntityType>
+        <EntityType Name="plan_master">
+          <Key>
+            <PropertyRef Name="PlanID" />
+          </Key>
+          <Property Name="PlanID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlanName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PlanDescription" Type="varchar" MaxLength="500" />
+          <Property Name="PlanCost" Type="double" />
+          <Property Name="PlanValidity_Days" Type="int" />
+          <Property Name="AllowedUsers" Type="int" />
+          <Property Name="CostPerUser" Type="double" />
+          <Property Name="AllowedSalesPersons" Type="int" />
+          <Property Name="CostPerSalesperson" Type="double" />
+          <Property Name="AllowedBusinesses" Type="int" />
+          <Property Name="CostPerBusines" Type="double" />
+          <Property Name="AllowedGoals" Type="int" />
+          <Property Name="CostPerGoal" Type="double" />
+          <Property Name="AllowedProducts" Type="int" />
+          <Property Name="CostPerProduct" Type="double" />
+          <Property Name="PlanExpiryDate" Type="datetime" Precision="0" />
+          <Property Name="LetsCompaniesPickupThisPlan" Type="bool" />
+          <Property Name="SpecialPlan" Type="bool" />
+          <Property Name="SetupFee" Type="double" />
+          <Property Name="SetupFeeDescription" Type="varchar" MaxLength="400" />
+          <Property Name="MinimumFee" Type="double" />
+          <Property Name="OtherFee" Type="double" />
+          <Property Name="OtherFeeDescription" Type="varchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="product_category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="150" />
+          <Property Name="UserProfileID" Type="bigint" />
+          <Property Name="IsActive" Type="bool" />
+          <Property Name="CreatedOn" Type="datetime" Precision="0" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+          <Property Name="ModifiedOn" Type="datetime" Precision="0" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="product_images">
+          <Key>
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="ImageID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductID" Type="bigint" />
+          <Property Name="ImageName" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductTitle" Type="varchar" MaxLength="200" />
+          <Property Name="ProductName" Type="varchar" MaxLength="300" />
+          <Property Name="ProductCategoryID" Type="bigint" />
+          <Property Name="Description" Type="varchar" MaxLength="2000" />
+          <Property Name="Keywords" Type="varchar" MaxLength="500" />
+          <Property Name="Width" Type="varchar" MaxLength="50" />
+          <Property Name="Height" Type="varchar" MaxLength="50" />
+          <Property Name="DimUnit" Type="varchar" MaxLength="45" />
+          <Property Name="Weight" Type="varchar" MaxLength="45" />
+          <Property Name="WeightUnit" Type="varchar" MaxLength="45" />
+          <Property Name="UPCCode" Type="varchar" MaxLength="100" />
+          <Property Name="ISBNNumber" Type="varchar" MaxLength="100" />
+          <Property Name="DefaultPrice" Type="double" />
+          <Property Name="IsActive" Type="bool" />
+          <Property Name="CreatedOn" Type="datetime" Precision="0" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+          <Property Name="ModifiedOn" Type="datetime" Precision="0" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="100" />
+          <Property Name="UserProfileID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="salesperson">
+          <Key>
+            <PropertyRef Name="SalesPersonID" />
+          </Key>
+          <Property Name="SalesPersonID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="bigint" />
+          <Property Name="FirstNamt" Type="varchar" MaxLength="100" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" />
+          <Property Name="Mobile1" Type="varchar" MaxLength="20" />
+          <Property Name="Mobile2" Type="varchar" MaxLength="20" />
+          <Property Name="workPhone" Type="varchar" MaxLength="20" />
+          <Property Name="Address1" Type="varchar" MaxLength="1000" />
+          <Property Name="Address2" Type="varchar" MaxLength="1000" />
+          <Property Name="City" Type="varchar" MaxLength="100" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="10" />
+          <Property Name="Country" Type="varchar" MaxLength="100" />
+          <Property Name="UserProfileID" Type="bigint" />
+          <Property Name="CreatedOn" Type="datetime" Precision="0" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+          <Property Name="ModifiedOn" Type="datetime" Precision="0" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="salesperson_business_mapping">
+          <Key>
+            <PropertyRef Name="SalesPersonBusinessID" />
+          </Key>
+          <Property Name="SalesPersonBusinessID" Type="bigint" Nullable="false" />
+          <Property Name="SalespersonID" Type="bigint" />
+          <Property Name="BusinessID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="user_login_history">
+          <Key>
+            <PropertyRef Name="LoginHistoryID" />
+          </Key>
+          <Property Name="LoginHistoryID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="bigint" />
+          <Property Name="IPAddress" Type="varchar" MaxLength="45" />
+          <Property Name="LastLoggedDate" Type="datetime" Precision="0" />
+          <Property Name="Message" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="user_permissions">
+          <Key>
+            <PropertyRef Name="PermissionID" />
+          </Key>
+          <Property Name="PermissionID" Type="bigint" Nullable="false" />
+          <Property Name="UserID" Type="bigint" />
+          <Property Name="FeatureID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="user_profile">
+          <Key>
+            <PropertyRef Name="UserProfileID" />
+          </Key>
+          <Property Name="UserProfileID" Type="bigint" Nullable="false" />
+          <Property Name="EmailID" Type="varchar" MaxLength="200" />
+          <Property Name="companyName" Type="varchar" MaxLength="200" />
+          <Property Name="Address1" Type="varchar" MaxLength="1000" />
+          <Property Name="Address2" Type="varchar" MaxLength="1000" />
+          <Property Name="City" Type="varchar" MaxLength="200" />
+          <Property Name="State" Type="varchar" MaxLength="200" />
+          <Property Name="Zip" Type="varchar" MaxLength="45" />
+          <Property Name="Country" Type="varchar" MaxLength="150" />
+          <Property Name="Latitude" Type="varchar" MaxLength="45" />
+          <Property Name="Longitude" Type="varchar" MaxLength="45" />
+          <Property Name="WebsiteName" Type="varchar" MaxLength="200" />
+          <Property Name="ContactPersonName" Type="varchar" MaxLength="150" />
+          <Property Name="ContactPersonPhone" Type="varchar" MaxLength="45" />
+          <Property Name="ContactPersonEmailID" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="user_role_mapping">
+          <Key>
+            <PropertyRef Name="mappingID" />
+          </Key>
+          <Property Name="mappingID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userID" Type="bigint" />
+          <Property Name="RoleID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="user_roles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleDesc" Type="varchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bool" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="150" />
+          <Property Name="LastName" Type="varchar" MaxLength="150" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="Password" Type="varchar" MaxLength="300" />
+          <Property Name="DateCreated" Type="datetime" Precision="0" />
+          <Property Name="IsActive" Type="bool" />
+          <Property Name="IsDeleted" Type="bool" />
+          <Property Name="DeletionDate" Type="datetime" Precision="0" />
+          <Property Name="UserProfileID" Type="bigint" />
+          <Property Name="IsLocked" Type="bool" />
+          <Property Name="LockedUntil" Type="datetime" Precision="0" />
+          <Property Name="LastPasswordChangeDate" Type="datetime" Precision="0" />
+        </EntityType>
+        <Association Name="FK_Business_UserProfileID">
+          <End Role="user_profile" Type="Self.user_profile" Multiplicity="0..1" />
+          <End Role="business" Type="Self.business" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_profile">
+              <PropertyRef Name="UserProfileID" />
+            </Principal>
+            <Dependent Role="business">
+              <PropertyRef Name="UserProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DealProductMapping_DealID">
+          <End Role="deals" Type="Self.deals" Multiplicity="0..1" />
+          <End Role="deal_product_mapping" Type="Self.deal_product_mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="deals">
+              <PropertyRef Name="DealID" />
+            </Principal>
+            <Dependent Role="deal_product_mapping">
+              <PropertyRef Name="DealID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DealProductMapping_ProductID">
+          <End Role="products" Type="Self.products" Multiplicity="0..1" />
+          <End Role="deal_product_mapping" Type="Self.deal_product_mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="deal_product_mapping">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Deals_UserProfileID">
+          <End Role="user_profile" Type="Self.user_profile" Multiplicity="0..1" />
+          <End Role="deals" Type="Self.deals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_profile">
+              <PropertyRef Name="UserProfileID" />
+            </Principal>
+            <Dependent Role="deals">
+              <PropertyRef Name="UserProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoginHistory_UserID">
+          <End Role="users" Type="Self.users" Multiplicity="0..1" />
+          <End Role="user_login_history" Type="Self.user_login_history" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="user_login_history">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_plan_detail_featureID">
+          <End Role="features" Type="Self.features" Multiplicity="0..1" />
+          <End Role="plan_detail" Type="Self.plan_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="features">
+              <PropertyRef Name="FeatureID" />
+            </Principal>
+            <Dependent Role="plan_detail">
+              <PropertyRef Name="FeatureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_plan_detail_planID">
+          <End Role="plan_master" Type="Self.plan_master" Multiplicity="0..1" />
+          <End Role="plan_detail" Type="Self.plan_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="plan_master">
+              <PropertyRef Name="PlanID" />
+            </Principal>
+            <Dependent Role="plan_detail">
+              <PropertyRef Name="PlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ProductCategoryID">
+          <End Role="product_category" Type="Self.product_category" Multiplicity="0..1" />
+          <End Role="products" Type="Self.products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product_category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="ProductCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_UserProfileID">
+          <End Role="user_profile" Type="Self.user_profile" Multiplicity="0..1" />
+          <End Role="products" Type="Self.products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_profile">
+              <PropertyRef Name="UserProfileID" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="UserProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductCategory_UserProfileID">
+          <End Role="user_profile" Type="Self.user_profile" Multiplicity="0..1" />
+          <End Role="product_category" Type="Self.product_category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_profile">
+              <PropertyRef Name="UserProfileID" />
+            </Principal>
+            <Dependent Role="product_category">
+              <PropertyRef Name="UserProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductImage_ProductID">
+          <End Role="products" Type="Self.products" Multiplicity="0..1" />
+          <End Role="product_images" Type="Self.product_images" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="product_images">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salesperson_Business_Mapping_BusinessID">
+          <End Role="business" Type="Self.business" Multiplicity="0..1" />
+          <End Role="salesperson_business_mapping" Type="Self.salesperson_business_mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="business">
+              <PropertyRef Name="BusinessID" />
+            </Principal>
+            <Dependent Role="salesperson_business_mapping">
+              <PropertyRef Name="BusinessID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salesperson_Business_Mapping_SalesPersonID">
+          <End Role="salesperson" Type="Self.salesperson" Multiplicity="0..1" />
+          <End Role="salesperson_business_mapping" Type="Self.salesperson_business_mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="salesperson">
+              <PropertyRef Name="SalesPersonID" />
+            </Principal>
+            <Dependent Role="salesperson_business_mapping">
+              <PropertyRef Name="SalespersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesPerson_UserID">
+          <End Role="users" Type="Self.users" Multiplicity="0..1" />
+          <End Role="salesperson" Type="Self.salesperson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="salesperson">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesPerson_UserProfileID">
+          <End Role="user_profile" Type="Self.user_profile" Multiplicity="0..1" />
+          <End Role="salesperson" Type="Self.salesperson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_profile">
+              <PropertyRef Name="UserProfileID" />
+            </Principal>
+            <Dependent Role="salesperson">
+              <PropertyRef Name="UserProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_role_mapping_roleid">
+          <End Role="user_roles" Type="Self.user_roles" Multiplicity="0..1" />
+          <End Role="user_role_mapping" Type="Self.user_role_mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="user_role_mapping">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_role_mapping_userID">
+          <End Role="users" Type="Self.users" Multiplicity="0..1" />
+          <End Role="user_role_mapping" Type="Self.user_role_mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="user_role_mapping">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPermissions_FeatureID">
+          <End Role="features" Type="Self.features" Multiplicity="0..1" />
+          <End Role="user_permissions" Type="Self.user_permissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="features">
+              <PropertyRef Name="FeatureID" />
+            </Principal>
+            <Dependent Role="user_permissions">
+              <PropertyRef Name="FeatureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPermissions_UserID">
+          <End Role="users" Type="Self.users" Multiplicity="0..1" />
+          <End Role="user_permissions" Type="Self.user_permissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="user_permissions">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Userprofileid">
+          <End Role="user_profile" Type="Self.user_profile" Multiplicity="0..1" />
+          <End Role="users" Type="Self.users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_profile">
+              <PropertyRef Name="UserProfileID" />
+            </Principal>
+            <Dependent Role="users">
+              <PropertyRef Name="UserProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="salestrackdbModelStoreContainer">
+          <EntitySet Name="brands" EntityType="Self.brands" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="business" EntityType="Self.business" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="deal_product_mapping" EntityType="Self.deal_product_mapping" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="deals" EntityType="Self.deals" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="features" EntityType="Self.features" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="plan_detail" EntityType="Self.plan_detail" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="plan_master" EntityType="Self.plan_master" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="product_category" EntityType="Self.product_category" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="product_images" EntityType="Self.product_images" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="products" EntityType="Self.products" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="salesperson" EntityType="Self.salesperson" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="salesperson_business_mapping" EntityType="Self.salesperson_business_mapping" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="user_login_history" EntityType="Self.user_login_history" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="user_permissions" EntityType="Self.user_permissions" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="user_profile" EntityType="Self.user_profile" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="user_role_mapping" EntityType="Self.user_role_mapping" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="user_roles" EntityType="Self.user_roles" Schema="salestrackdb" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="salestrackdb" store:Type="Tables" />
+          <AssociationSet Name="FK_Business_UserProfileID" Association="Self.FK_Business_UserProfileID">
+            <End Role="user_profile" EntitySet="user_profile" />
+            <End Role="business" EntitySet="business" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DealProductMapping_DealID" Association="Self.FK_DealProductMapping_DealID">
+            <End Role="deals" EntitySet="deals" />
+            <End Role="deal_product_mapping" EntitySet="deal_product_mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DealProductMapping_ProductID" Association="Self.FK_DealProductMapping_ProductID">
+            <End Role="products" EntitySet="products" />
+            <End Role="deal_product_mapping" EntitySet="deal_product_mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Deals_UserProfileID" Association="Self.FK_Deals_UserProfileID">
+            <End Role="user_profile" EntitySet="user_profile" />
+            <End Role="deals" EntitySet="deals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoginHistory_UserID" Association="Self.FK_LoginHistory_UserID">
+            <End Role="users" EntitySet="users" />
+            <End Role="user_login_history" EntitySet="user_login_history" />
+          </AssociationSet>
+          <AssociationSet Name="FK_plan_detail_featureID" Association="Self.FK_plan_detail_featureID">
+            <End Role="features" EntitySet="features" />
+            <End Role="plan_detail" EntitySet="plan_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_plan_detail_planID" Association="Self.FK_plan_detail_planID">
+            <End Role="plan_master" EntitySet="plan_master" />
+            <End Role="plan_detail" EntitySet="plan_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductCategoryID" Association="Self.FK_Product_ProductCategoryID">
+            <End Role="product_category" EntitySet="product_category" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_UserProfileID" Association="Self.FK_Product_UserProfileID">
+            <End Role="user_profile" EntitySet="user_profile" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductCategory_UserProfileID" Association="Self.FK_ProductCategory_UserProfileID">
+            <End Role="user_profile" EntitySet="user_profile" />
+            <End Role="product_category" EntitySet="product_category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductImage_ProductID" Association="Self.FK_ProductImage_ProductID">
+            <End Role="products" EntitySet="products" />
+            <End Role="product_images" EntitySet="product_images" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salesperson_Business_Mapping_BusinessID" Association="Self.FK_Salesperson_Business_Mapping_BusinessID">
+            <End Role="business" EntitySet="business" />
+            <End Role="salesperson_business_mapping" EntitySet="salesperson_business_mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salesperson_Business_Mapping_SalesPersonID" Association="Self.FK_Salesperson_Business_Mapping_SalesPersonID">
+            <End Role="salesperson" EntitySet="salesperson" />
+            <End Role="salesperson_business_mapping" EntitySet="salesperson_business_mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesPerson_UserID" Association="Self.FK_SalesPerson_UserID">
+            <End Role="users" EntitySet="users" />
+            <End Role="salesperson" EntitySet="salesperson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesPerson_UserProfileID" Association="Self.FK_SalesPerson_UserProfileID">
+            <End Role="user_profile" EntitySet="user_profile" />
+            <End Role="salesperson" EntitySet="salesperson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_role_mapping_roleid" Association="Self.FK_user_role_mapping_roleid">
+            <End Role="user_roles" EntitySet="user_roles" />
+            <End Role="user_role_mapping" EntitySet="user_role_mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_role_mapping_userID" Association="Self.FK_user_role_mapping_userID">
+            <End Role="users" EntitySet="users" />
+            <End Role="user_role_mapping" EntitySet="user_role_mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPermissions_FeatureID" Association="Self.FK_UserPermissions_FeatureID">
+            <End Role="features" EntitySet="features" />
+            <End Role="user_permissions" EntitySet="user_permissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPermissions_UserID" Association="Self.FK_UserPermissions_UserID">
+            <End Role="users" EntitySet="users" />
+            <End Role="user_permissions" EntitySet="user_permissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Userprofileid" Association="Self.FK_Users_Userprofileid">
+            <End Role="user_profile" EntitySet="user_profile" />
+            <End Role="users" EntitySet="users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="salestrackdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="brand">
+          <Key>
+            <PropertyRef Name="BrandID" />
+          </Key>
+          <Property Name="BrandID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BrandName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ImageName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedOn" Type="DateTime" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="business">
+          <Key>
+            <PropertyRef Name="BusinessID" />
+          </Key>
+          <Property Name="BusinessID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BusnessName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Address1" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WebsiteName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPersonName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPersonPhone" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPersonEmail" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="UserProfileID" Type="Int64" />
+          <Property Name="CreatedOn" Type="DateTime" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ImageName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="user_profile" Relationship="Self.FK_Business_UserProfileID" FromRole="business" ToRole="user_profile" />
+          <NavigationProperty Name="salesperson_business_mapping" Relationship="Self.FK_Salesperson_Business_Mapping_BusinessID" FromRole="business" ToRole="salesperson_business_mapping" />
+        </EntityType>
+        <EntityType Name="deal_product_mapping">
+          <Key>
+            <PropertyRef Name="DealProductID" />
+          </Key>
+          <Property Name="DealProductID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DealID" Type="Int64" />
+          <Property Name="ProductID" Type="Int64" />
+          <NavigationProperty Name="deal" Relationship="Self.FK_DealProductMapping_DealID" FromRole="deal_product_mapping" ToRole="deals" />
+          <NavigationProperty Name="product" Relationship="Self.FK_DealProductMapping_ProductID" FromRole="deal_product_mapping" ToRole="products" />
+        </EntityType>
+        <EntityType Name="deal">
+          <Key>
+            <PropertyRef Name="DealID" />
+          </Key>
+          <Property Name="DealID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserProfileID" Type="Int64" />
+          <Property Name="StartDate" Type="DateTime" />
+          <Property Name="EndDate" Type="DateTime" />
+          <Property Name="DealType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DealApplicableAs" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="DealDescription" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="deal_product_mapping" Relationship="Self.FK_DealProductMapping_DealID" FromRole="deals" ToRole="deal_product_mapping" />
+          <NavigationProperty Name="user_profile" Relationship="Self.FK_Deals_UserProfileID" FromRole="deals" ToRole="user_profile" />
+        </EntityType>
+        <EntityType Name="feature">
+          <Key>
+            <PropertyRef Name="FeatureID" />
+          </Key>
+          <Property Name="FeatureID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FeatureTitle" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="FeatureURL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="plan_detail" Relationship="Self.FK_plan_detail_featureID" FromRole="features" ToRole="plan_detail" />
+          <NavigationProperty Name="user_permissions" Relationship="Self.FK_UserPermissions_FeatureID" FromRole="features" ToRole="user_permissions" />
+        </EntityType>
+        <EntityType Name="plan_detail">
+          <Key>
+            <PropertyRef Name="PlanDetailID" />
+          </Key>
+          <Property Name="PlanDetailID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlanID" Type="Int64" />
+          <Property Name="FeatureID" Type="Int64" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="feature" Relationship="Self.FK_plan_detail_featureID" FromRole="plan_detail" ToRole="features" />
+          <NavigationProperty Name="plan_master" Relationship="Self.FK_plan_detail_planID" FromRole="plan_detail" ToRole="plan_master" />
+        </EntityType>
+        <EntityType Name="plan_master">
+          <Key>
+            <PropertyRef Name="PlanID" />
+          </Key>
+          <Property Name="PlanID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlanName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PlanDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PlanCost" Type="Double" />
+          <Property Name="PlanValidity_Days" Type="Int32" />
+          <Property Name="AllowedUsers" Type="Int32" />
+          <Property Name="CostPerUser" Type="Double" />
+          <Property Name="AllowedSalesPersons" Type="Int32" />
+          <Property Name="CostPerSalesperson" Type="Double" />
+          <Property Name="AllowedBusinesses" Type="Int32" />
+          <Property Name="CostPerBusines" Type="Double" />
+          <Property Name="AllowedGoals" Type="Int32" />
+          <Property Name="CostPerGoal" Type="Double" />
+          <Property Name="AllowedProducts" Type="Int32" />
+          <Property Name="CostPerProduct" Type="Double" />
+          <Property Name="PlanExpiryDate" Type="DateTime" />
+          <Property Name="LetsCompaniesPickupThisPlan" Type="Boolean" />
+          <Property Name="SpecialPlan" Type="Boolean" />
+          <Property Name="SetupFee" Type="Double" />
+          <Property Name="SetupFeeDescription" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="MinimumFee" Type="Double" />
+          <Property Name="OtherFee" Type="Double" />
+          <Property Name="OtherFeeDescription" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="plan_detail" Relationship="Self.FK_plan_detail_planID" FromRole="plan_master" ToRole="plan_detail" />
+        </EntityType>
+        <EntityType Name="product_category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="UserProfileID" Type="Int64" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedOn" Type="DateTime" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="products" Relationship="Self.FK_Product_ProductCategoryID" FromRole="product_category" ToRole="products" />
+          <NavigationProperty Name="user_profile" Relationship="Self.FK_ProductCategory_UserProfileID" FromRole="product_category" ToRole="user_profile" />
+        </EntityType>
+        <EntityType Name="product_images">
+          <Key>
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="ImageID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int64" />
+          <Property Name="ImageName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="product" Relationship="Self.FK_ProductImage_ProductID" FromRole="product_images" ToRole="products" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ProductName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="ProductCategoryID" Type="Int64" />
+          <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Keywords" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Width" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Height" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DimUnit" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Weight" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="WeightUnit" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="UPCCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ISBNNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DefaultPrice" Type="Double" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedOn" Type="DateTime" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserProfileID" Type="Int64" />
+          <NavigationProperty Name="deal_product_mapping" Relationship="Self.FK_DealProductMapping_ProductID" FromRole="products" ToRole="deal_product_mapping" />
+          <NavigationProperty Name="product_category" Relationship="Self.FK_Product_ProductCategoryID" FromRole="products" ToRole="product_category" />
+          <NavigationProperty Name="product_images" Relationship="Self.FK_ProductImage_ProductID" FromRole="products" ToRole="product_images" />
+          <NavigationProperty Name="user_profile" Relationship="Self.FK_Product_UserProfileID" FromRole="products" ToRole="user_profile" />
+        </EntityType>
+        <EntityType Name="salesperson">
+          <Key>
+            <PropertyRef Name="SalesPersonID" />
+          </Key>
+          <Property Name="SalesPersonID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int64" />
+          <Property Name="FirstNamt" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="workPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Address1" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserProfileID" Type="Int64" />
+          <Property Name="CreatedOn" Type="DateTime" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="salesperson_business_mapping" Relationship="Self.FK_Salesperson_Business_Mapping_SalesPersonID" FromRole="salesperson" ToRole="salesperson_business_mapping" />
+          <NavigationProperty Name="user" Relationship="Self.FK_SalesPerson_UserID" FromRole="salesperson" ToRole="users" />
+          <NavigationProperty Name="user_profile" Relationship="Self.FK_SalesPerson_UserProfileID" FromRole="salesperson" ToRole="user_profile" />
+        </EntityType>
+        <EntityType Name="salesperson_business_mapping">
+          <Key>
+            <PropertyRef Name="SalesPersonBusinessID" />
+          </Key>
+          <Property Name="SalesPersonBusinessID" Type="Int64" Nullable="false" />
+          <Property Name="SalespersonID" Type="Int64" />
+          <Property Name="BusinessID" Type="Int64" />
+          <NavigationProperty Name="business" Relationship="Self.FK_Salesperson_Business_Mapping_BusinessID" FromRole="salesperson_business_mapping" ToRole="business" />
+          <NavigationProperty Name="salesperson" Relationship="Self.FK_Salesperson_Business_Mapping_SalesPersonID" FromRole="salesperson_business_mapping" ToRole="salesperson" />
+        </EntityType>
+        <EntityType Name="user_login_history">
+          <Key>
+            <PropertyRef Name="LoginHistoryID" />
+          </Key>
+          <Property Name="LoginHistoryID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int64" />
+          <Property Name="IPAddress" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="LastLoggedDate" Type="DateTime" />
+          <Property Name="Message" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="user" Relationship="Self.FK_LoginHistory_UserID" FromRole="user_login_history" ToRole="users" />
+        </EntityType>
+        <EntityType Name="user_permissions">
+          <Key>
+            <PropertyRef Name="PermissionID" />
+          </Key>
+          <Property Name="PermissionID" Type="Int64" Nullable="false" />
+          <Property Name="UserID" Type="Int64" />
+          <Property Name="FeatureID" Type="Int64" />
+          <NavigationProperty Name="feature" Relationship="Self.FK_UserPermissions_FeatureID" FromRole="user_permissions" ToRole="features" />
+          <NavigationProperty Name="user" Relationship="Self.FK_UserPermissions_UserID" FromRole="user_permissions" ToRole="users" />
+        </EntityType>
+        <EntityType Name="user_profile">
+          <Key>
+            <PropertyRef Name="UserProfileID" />
+          </Key>
+          <Property Name="UserProfileID" Type="Int64" Nullable="false" />
+          <Property Name="EmailID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="companyName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Address1" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Zip" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Latitude" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Longitude" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="WebsiteName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPersonName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPersonPhone" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPersonEmailID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="businesses" Relationship="Self.FK_Business_UserProfileID" FromRole="user_profile" ToRole="business" />
+          <NavigationProperty Name="deals" Relationship="Self.FK_Deals_UserProfileID" FromRole="user_profile" ToRole="deals" />
+          <NavigationProperty Name="product_category" Relationship="Self.FK_ProductCategory_UserProfileID" FromRole="user_profile" ToRole="product_category" />
+          <NavigationProperty Name="products" Relationship="Self.FK_Product_UserProfileID" FromRole="user_profile" ToRole="products" />
+          <NavigationProperty Name="salespersons" Relationship="Self.FK_SalesPerson_UserProfileID" FromRole="user_profile" ToRole="salesperson" />
+          <NavigationProperty Name="users" Relationship="Self.FK_Users_Userprofileid" FromRole="user_profile" ToRole="users" />
+        </EntityType>
+        <EntityType Name="user_role_mapping">
+          <Key>
+            <PropertyRef Name="mappingID" />
+          </Key>
+          <Property Name="mappingID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userID" Type="Int64" />
+          <Property Name="RoleID" Type="Int64" />
+          <NavigationProperty Name="user_roles" Relationship="Self.FK_user_role_mapping_roleid" FromRole="user_role_mapping" ToRole="user_roles" />
+          <NavigationProperty Name="user" Relationship="Self.FK_user_role_mapping_userID" FromRole="user_role_mapping" ToRole="users" />
+        </EntityType>
+        <EntityType Name="user_roles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="user_role_mapping" Relationship="Self.FK_user_role_mapping_roleid" FromRole="user_roles" ToRole="user_role_mapping" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="DeletionDate" Type="DateTime" />
+          <Property Name="UserProfileID" Type="Int64" />
+          <Property Name="IsLocked" Type="Boolean" />
+          <Property Name="LockedUntil" Type="DateTime" />
+          <Property Name="LastPasswordChangeDate" Type="DateTime" />
+          <NavigationProperty Name="salespersons" Relationship="Self.FK_SalesPerson_UserID" FromRole="users" ToRole="salesperson" />
+          <NavigationProperty Name="user_login_history" Relationship="Self.FK_LoginHistory_UserID" FromRole="users" ToRole="user_login_history" />
+          <NavigationProperty Name="user_permissions" Relationship="Self.FK_UserPermissions_UserID" FromRole="users" ToRole="user_permissions" />
+          <NavigationProperty Name="user_profile" Relationship="Self.FK_Users_Userprofileid" FromRole="users" ToRole="user_profile" />
+          <NavigationProperty Name="user_role_mapping" Relationship="Self.FK_user_role_mapping_userID" FromRole="users" ToRole="user_role_mapping" />
+        </EntityType>
+        <Association Name="FK_Business_UserProfileID">
+          <End Role="user_profile" Type="Self.user_profile" Multiplicity="0..1" />
+          <End Role="business" Type="Self.business" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_profile">
+              <PropertyRef Name="UserProfileID" />
+            </Principal>
+            <Dependent Role="business">
+              <PropertyRef Name="UserProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salesperson_Business_Mapping_BusinessID">
+          <End Role="business" Type="Self.business" Multiplicity="0..1" />
+          <End Role="salesperson_business_mapping" Type="Self.salesperson_business_mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="business">
+              <PropertyRef Name="BusinessID" />
+            </Principal>
+            <Dependent Role="salesperson_business_mapping">
+              <PropertyRef Name="BusinessID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DealProductMapping_DealID">
+          <End Role="deals" Type="Self.deal" Multiplicity="0..1" />
+          <End Role="deal_product_mapping" Type="Self.deal_product_mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="deals">
+              <PropertyRef Name="DealID" />
+            </Principal>
+            <Dependent Role="deal_product_mapping">
+              <PropertyRef Name="DealID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DealProductMapping_ProductID">
+          <End Role="products" Type="Self.product" Multiplicity="0..1" />
+          <End Role="deal_product_mapping" Type="Self.deal_product_mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="deal_product_mapping">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Deals_UserProfileID">
+          <End Role="user_profile" Type="Self.user_profile" Multiplicity="0..1" />
+          <End Role="deals" Type="Self.deal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_profile">
+              <PropertyRef Name="UserProfileID" />
+            </Principal>
+            <Dependent Role="deals">
+              <PropertyRef Name="UserProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_plan_detail_featureID">
+          <End Role="features" Type="Self.feature" Multiplicity="0..1" />
+          <End Role="plan_detail" Type="Self.plan_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="features">
+              <PropertyRef Name="FeatureID" />
+            </Principal>
+            <Dependent Role="plan_detail">
+              <PropertyRef Name="FeatureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPermissions_FeatureID">
+          <End Role="features" Type="Self.feature" Multiplicity="0..1" />
+          <End Role="user_permissions" Type="Self.user_permissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="features">
+              <PropertyRef Name="FeatureID" />
+            </Principal>
+            <Dependent Role="user_permissions">
+              <PropertyRef Name="FeatureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_plan_detail_planID">
+          <End Role="plan_master" Type="Self.plan_master" Multiplicity="0..1" />
+          <End Role="plan_detail" Type="Self.plan_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="plan_master">
+              <PropertyRef Name="PlanID" />
+            </Principal>
+            <Dependent Role="plan_detail">
+              <PropertyRef Name="PlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ProductCategoryID">
+          <End Role="product_category" Type="Self.product_category" Multiplicity="0..1" />
+          <End Role="products" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product_category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="ProductCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductCategory_UserProfileID">
+          <End Role="user_profile" Type="Self.user_profile" Multiplicity="0..1" />
+          <End Role="product_category" Type="Self.product_category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_profile">
+              <PropertyRef Name="UserProfileID" />
+            </Principal>
+            <Dependent Role="product_category">
+              <PropertyRef Name="UserProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductImage_ProductID">
+          <End Role="products" Type="Self.product" Multiplicity="0..1" />
+          <End Role="product_images" Type="Self.product_images" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="product_images">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_UserProfileID">
+          <End Role="user_profile" Type="Self.user_profile" Multiplicity="0..1" />
+          <End Role="products" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_profile">
+              <PropertyRef Name="UserProfileID" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="UserProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salesperson_Business_Mapping_SalesPersonID">
+          <End Role="salesperson" Type="Self.salesperson" Multiplicity="0..1" />
+          <End Role="salesperson_business_mapping" Type="Self.salesperson_business_mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="salesperson">
+              <PropertyRef Name="SalesPersonID" />
+            </Principal>
+            <Dependent Role="salesperson_business_mapping">
+              <PropertyRef Name="SalespersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesPerson_UserID">
+          <End Role="users" Type="Self.user" Multiplicity="0..1" />
+          <End Role="salesperson" Type="Self.salesperson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="salesperson">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesPerson_UserProfileID">
+          <End Role="user_profile" Type="Self.user_profile" Multiplicity="0..1" />
+          <End Role="salesperson" Type="Self.salesperson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_profile">
+              <PropertyRef Name="UserProfileID" />
+            </Principal>
+            <Dependent Role="salesperson">
+              <PropertyRef Name="UserProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoginHistory_UserID">
+          <End Role="users" Type="Self.user" Multiplicity="0..1" />
+          <End Role="user_login_history" Type="Self.user_login_history" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="user_login_history">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPermissions_UserID">
+          <End Role="users" Type="Self.user" Multiplicity="0..1" />
+          <End Role="user_permissions" Type="Self.user_permissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="user_permissions">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Userprofileid">
+          <End Role="user_profile" Type="Self.user_profile" Multiplicity="0..1" />
+          <End Role="users" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_profile">
+              <PropertyRef Name="UserProfileID" />
+            </Principal>
+            <Dependent Role="users">
+              <PropertyRef Name="UserProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_role_mapping_roleid">
+          <End Role="user_roles" Type="Self.user_roles" Multiplicity="0..1" />
+          <End Role="user_role_mapping" Type="Self.user_role_mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="user_role_mapping">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_role_mapping_userID">
+          <End Role="users" Type="Self.user" Multiplicity="0..1" />
+          <End Role="user_role_mapping" Type="Self.user_role_mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="user_role_mapping">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="salestrackdbConnection" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="brands" EntityType="Self.brand" />
+          <EntitySet Name="businesses" EntityType="Self.business" />
+          <EntitySet Name="deal_product_mapping" EntityType="Self.deal_product_mapping" />
+          <EntitySet Name="deals" EntityType="Self.deal" />
+          <EntitySet Name="features" EntityType="Self.feature" />
+          <EntitySet Name="plan_detail" EntityType="Self.plan_detail" />
+          <EntitySet Name="plan_master" EntityType="Self.plan_master" />
+          <EntitySet Name="product_category" EntityType="Self.product_category" />
+          <EntitySet Name="product_images" EntityType="Self.product_images" />
+          <EntitySet Name="products" EntityType="Self.product" />
+          <EntitySet Name="salespersons" EntityType="Self.salesperson" />
+          <EntitySet Name="salesperson_business_mapping" EntityType="Self.salesperson_business_mapping" />
+          <EntitySet Name="user_login_history" EntityType="Self.user_login_history" />
+          <EntitySet Name="user_permissions" EntityType="Self.user_permissions" />
+          <EntitySet Name="user_profile" EntityType="Self.user_profile" />
+          <EntitySet Name="user_role_mapping" EntityType="Self.user_role_mapping" />
+          <EntitySet Name="user_roles" EntityType="Self.user_roles" />
+          <EntitySet Name="users" EntityType="Self.user" />
+          <AssociationSet Name="FK_Business_UserProfileID" Association="Self.FK_Business_UserProfileID">
+            <End Role="user_profile" EntitySet="user_profile" />
+            <End Role="business" EntitySet="businesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salesperson_Business_Mapping_BusinessID" Association="Self.FK_Salesperson_Business_Mapping_BusinessID">
+            <End Role="business" EntitySet="businesses" />
+            <End Role="salesperson_business_mapping" EntitySet="salesperson_business_mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DealProductMapping_DealID" Association="Self.FK_DealProductMapping_DealID">
+            <End Role="deals" EntitySet="deals" />
+            <End Role="deal_product_mapping" EntitySet="deal_product_mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DealProductMapping_ProductID" Association="Self.FK_DealProductMapping_ProductID">
+            <End Role="products" EntitySet="products" />
+            <End Role="deal_product_mapping" EntitySet="deal_product_mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Deals_UserProfileID" Association="Self.FK_Deals_UserProfileID">
+            <End Role="user_profile" EntitySet="user_profile" />
+            <End Role="deals" EntitySet="deals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_plan_detail_featureID" Association="Self.FK_plan_detail_featureID">
+            <End Role="features" EntitySet="features" />
+            <End Role="plan_detail" EntitySet="plan_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPermissions_FeatureID" Association="Self.FK_UserPermissions_FeatureID">
+            <End Role="features" EntitySet="features" />
+            <End Role="user_permissions" EntitySet="user_permissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_plan_detail_planID" Association="Self.FK_plan_detail_planID">
+            <End Role="plan_master" EntitySet="plan_master" />
+            <End Role="plan_detail" EntitySet="plan_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductCategoryID" Association="Self.FK_Product_ProductCategoryID">
+            <End Role="product_category" EntitySet="product_category" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductCategory_UserProfileID" Association="Self.FK_ProductCategory_UserProfileID">
+            <End Role="user_profile" EntitySet="user_profile" />
+            <End Role="product_category" EntitySet="product_category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductImage_ProductID" Association="Self.FK_ProductImage_ProductID">
+            <End Role="products" EntitySet="products" />
+            <End Role="product_images" EntitySet="product_images" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_UserProfileID" Association="Self.FK_Product_UserProfileID">
+            <End Role="user_profile" EntitySet="user_profile" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salesperson_Business_Mapping_SalesPersonID" Association="Self.FK_Salesperson_Business_Mapping_SalesPersonID">
+            <End Role="salesperson" EntitySet="salespersons" />
+            <End Role="salesperson_business_mapping" EntitySet="salesperson_business_mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesPerson_UserID" Association="Self.FK_SalesPerson_UserID">
+            <End Role="users" EntitySet="users" />
+            <End Role="salesperson" EntitySet="salespersons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesPerson_UserProfileID" Association="Self.FK_SalesPerson_UserProfileID">
+            <End Role="user_profile" EntitySet="user_profile" />
+            <End Role="salesperson" EntitySet="salespersons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoginHistory_UserID" Association="Self.FK_LoginHistory_UserID">
+            <End Role="users" EntitySet="users" />
+            <End Role="user_login_history" EntitySet="user_login_history" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPermissions_UserID" Association="Self.FK_UserPermissions_UserID">
+            <End Role="users" EntitySet="users" />
+            <End Role="user_permissions" EntitySet="user_permissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Userprofileid" Association="Self.FK_Users_Userprofileid">
+            <End Role="user_profile" EntitySet="user_profile" />
+            <End Role="users" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_role_mapping_roleid" Association="Self.FK_user_role_mapping_roleid">
+            <End Role="user_roles" EntitySet="user_roles" />
+            <End Role="user_role_mapping" EntitySet="user_role_mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_role_mapping_userID" Association="Self.FK_user_role_mapping_userID">
+            <End Role="users" EntitySet="users" />
+            <End Role="user_role_mapping" EntitySet="user_role_mapping" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="salestrackdbModelStoreContainer" CdmEntityContainer="salestrackdbConnection">
+          <EntitySetMapping Name="brands">
+            <EntityTypeMapping TypeName="salestrackdbModel.brand">
+              <MappingFragment StoreEntitySet="brands">
+                <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="businesses">
+            <EntityTypeMapping TypeName="salestrackdbModel.business">
+              <MappingFragment StoreEntitySet="business">
+                <ScalarProperty Name="BusinessID" ColumnName="BusinessID" />
+                <ScalarProperty Name="BusnessName" ColumnName="BusnessName" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="WebsiteName" ColumnName="WebsiteName" />
+                <ScalarProperty Name="ContactPersonName" ColumnName="ContactPersonName" />
+                <ScalarProperty Name="ContactPersonPhone" ColumnName="ContactPersonPhone" />
+                <ScalarProperty Name="ContactPersonEmail" ColumnName="ContactPersonEmail" />
+                <ScalarProperty Name="UserProfileID" ColumnName="UserProfileID" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="deal_product_mapping">
+            <EntityTypeMapping TypeName="salestrackdbModel.deal_product_mapping">
+              <MappingFragment StoreEntitySet="deal_product_mapping">
+                <ScalarProperty Name="DealProductID" ColumnName="DealProductID" />
+                <ScalarProperty Name="DealID" ColumnName="DealID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="deals">
+            <EntityTypeMapping TypeName="salestrackdbModel.deal">
+              <MappingFragment StoreEntitySet="deals">
+                <ScalarProperty Name="DealID" ColumnName="DealID" />
+                <ScalarProperty Name="UserProfileID" ColumnName="UserProfileID" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="DealType" ColumnName="DealType" />
+                <ScalarProperty Name="DealApplicableAs" ColumnName="DealApplicableAs" />
+                <ScalarProperty Name="DealDescription" ColumnName="DealDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="features">
+            <EntityTypeMapping TypeName="salestrackdbModel.feature">
+              <MappingFragment StoreEntitySet="features">
+                <ScalarProperty Name="FeatureID" ColumnName="FeatureID" />
+                <ScalarProperty Name="FeatureTitle" ColumnName="FeatureTitle" />
+                <ScalarProperty Name="FeatureURL" ColumnName="FeatureURL" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="plan_detail">
+            <EntityTypeMapping TypeName="salestrackdbModel.plan_detail">
+              <MappingFragment StoreEntitySet="plan_detail">
+                <ScalarProperty Name="PlanDetailID" ColumnName="PlanDetailID" />
+                <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+                <ScalarProperty Name="FeatureID" ColumnName="FeatureID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="plan_master">
+            <EntityTypeMapping TypeName="salestrackdbModel.plan_master">
+              <MappingFragment StoreEntitySet="plan_master">
+                <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+                <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+                <ScalarProperty Name="PlanDescription" ColumnName="PlanDescription" />
+                <ScalarProperty Name="PlanCost" ColumnName="PlanCost" />
+                <ScalarProperty Name="PlanValidity_Days" ColumnName="PlanValidity_Days" />
+                <ScalarProperty Name="AllowedUsers" ColumnName="AllowedUsers" />
+                <ScalarProperty Name="CostPerUser" ColumnName="CostPerUser" />
+                <ScalarProperty Name="AllowedSalesPersons" ColumnName="AllowedSalesPersons" />
+                <ScalarProperty Name="CostPerSalesperson" ColumnName="CostPerSalesperson" />
+                <ScalarProperty Name="AllowedBusinesses" ColumnName="AllowedBusinesses" />
+                <ScalarProperty Name="CostPerBusines" ColumnName="CostPerBusines" />
+                <ScalarProperty Name="AllowedGoals" ColumnName="AllowedGoals" />
+                <ScalarProperty Name="CostPerGoal" ColumnName="CostPerGoal" />
+                <ScalarProperty Name="AllowedProducts" ColumnName="AllowedProducts" />
+                <ScalarProperty Name="CostPerProduct" ColumnName="CostPerProduct" />
+                <ScalarProperty Name="PlanExpiryDate" ColumnName="PlanExpiryDate" />
+                <ScalarProperty Name="LetsCompaniesPickupThisPlan" ColumnName="LetsCompaniesPickupThisPlan" />
+                <ScalarProperty Name="SpecialPlan" ColumnName="SpecialPlan" />
+                <ScalarProperty Name="SetupFee" ColumnName="SetupFee" />
+                <ScalarProperty Name="SetupFeeDescription" ColumnName="SetupFeeDescription" />
+                <ScalarProperty Name="MinimumFee" ColumnName="MinimumFee" />
+                <ScalarProperty Name="OtherFee" ColumnName="OtherFee" />
+                <ScalarProperty Name="OtherFeeDescription" ColumnName="OtherFeeDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product_category">
+            <EntityTypeMapping TypeName="salestrackdbModel.product_category">
+              <MappingFragment StoreEntitySet="product_category">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="UserProfileID" ColumnName="UserProfileID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product_images">
+            <EntityTypeMapping TypeName="salestrackdbModel.product_images">
+              <MappingFragment StoreEntitySet="product_images">
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="salestrackdbModel.product">
+              <MappingFragment StoreEntitySet="products">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductTitle" ColumnName="ProductTitle" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="DimUnit" ColumnName="DimUnit" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="WeightUnit" ColumnName="WeightUnit" />
+                <ScalarProperty Name="UPCCode" ColumnName="UPCCode" />
+                <ScalarProperty Name="ISBNNumber" ColumnName="ISBNNumber" />
+                <ScalarProperty Name="DefaultPrice" ColumnName="DefaultPrice" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="UserProfileID" ColumnName="UserProfileID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="salespersons">
+            <EntityTypeMapping TypeName="salestrackdbModel.salesperson">
+              <MappingFragment StoreEntitySet="salesperson">
+                <ScalarProperty Name="SalesPersonID" ColumnName="SalesPersonID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FirstNamt" ColumnName="FirstNamt" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Mobile1" ColumnName="Mobile1" />
+                <ScalarProperty Name="Mobile2" ColumnName="Mobile2" />
+                <ScalarProperty Name="workPhone" ColumnName="workPhone" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="UserProfileID" ColumnName="UserProfileID" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="salesperson_business_mapping">
+            <EntityTypeMapping TypeName="salestrackdbModel.salesperson_business_mapping">
+              <MappingFragment StoreEntitySet="salesperson_business_mapping">
+                <ScalarProperty Name="SalesPersonBusinessID" ColumnName="SalesPersonBusinessID" />
+                <ScalarProperty Name="SalespersonID" ColumnName="SalespersonID" />
+                <ScalarProperty Name="BusinessID" ColumnName="BusinessID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_login_history">
+            <EntityTypeMapping TypeName="salestrackdbModel.user_login_history">
+              <MappingFragment StoreEntitySet="user_login_history">
+                <ScalarProperty Name="LoginHistoryID" ColumnName="LoginHistoryID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="LastLoggedDate" ColumnName="LastLoggedDate" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_permissions">
+            <EntityTypeMapping TypeName="salestrackdbModel.user_permissions">
+              <MappingFragment StoreEntitySet="user_permissions">
+                <ScalarProperty Name="PermissionID" ColumnName="PermissionID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FeatureID" ColumnName="FeatureID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_profile">
+            <EntityTypeMapping TypeName="salestrackdbModel.user_profile">
+              <MappingFragment StoreEntitySet="user_profile">
+                <ScalarProperty Name="UserProfileID" ColumnName="UserProfileID" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="companyName" ColumnName="companyName" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="WebsiteName" ColumnName="WebsiteName" />
+                <ScalarProperty Name="ContactPersonName" ColumnName="ContactPersonName" />
+                <ScalarProperty Name="ContactPersonPhone" ColumnName="ContactPersonPhone" />
+                <ScalarProperty Name="ContactPersonEmailID" ColumnName="ContactPersonEmailID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_role_mapping">
+            <EntityTypeMapping TypeName="salestrackdbModel.user_role_mapping">
+              <MappingFragment StoreEntitySet="user_role_mapping">
+                <ScalarProperty Name="mappingID" ColumnName="mappingID" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_roles">
+            <EntityTypeMapping TypeName="salestrackdbModel.user_roles">
+              <MappingFragment StoreEntitySet="user_roles">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="RoleDesc" ColumnName="RoleDesc" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="salestrackdbModel.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+                <ScalarProperty Name="UserProfileID" ColumnName="UserProfileID" />
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="LockedUntil" ColumnName="LockedUntil" />
+                <ScalarProperty Name="LastPasswordChangeDate" ColumnName="LastPasswordChangeDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

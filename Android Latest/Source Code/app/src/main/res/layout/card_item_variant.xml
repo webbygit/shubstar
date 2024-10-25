@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    android:layout_marginRight="6dp"
+    android:background="@drawable/recycler_item_selected"
+
+    android:orientation="vertical">
+
+
+    <android.support.v7.widget.AppCompatImageView
+
+        android:id="@+id/ivVariant"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+
+        android:padding="3dp"
+        android:src="@drawable/image1" />
+
+    <com.salestrackmobileapp.android.custome_views.Custome_TextView
+        android:id="@+id/tvVariant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:minLines="2"
+        android:padding="5dp"
+        android:text="Redmi 3s prime(Rose pink)"
+        android:textAppearance="?android:textAppearance"
+        android:textColor="@color/dark_dim_gray"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/llVariantImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/all_border_grey"
+        android:orientation="horizontal"
+        android:visibility="gone"></LinearLayout>
+
+
+</LinearLayout>

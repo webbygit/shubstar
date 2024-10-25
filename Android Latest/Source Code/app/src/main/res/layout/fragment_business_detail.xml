@@ -1,0 +1,135 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.salestrackmobileapp.android.fragments.BusinessDetailFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:background="@color/grey">
+
+            <ImageView
+                android:id="@+id/business_img"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/calendar_icon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <com.salestrackmobileapp.android.custome_views.Custome_BoldTextView
+                android:id="@+id/ttle_business_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="titlesdcsfsdfsdfwe"
+                android:textColor="@color/dark_dim_gray"
+                android:textSize="20dp" />
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/contact_person_name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="left"
+                android:text="titlesdcsfsdfsdfwe"
+                android:textColor="@color/gray"
+                android:textSize="15dp" />
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/address_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="left"
+                android:text="titlesdcsfsdfsdfwe"
+                android:textColor="@color/gray"
+                android:textSize="15dp" />
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/contact_number_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="left"
+                android:text="titlesdcsfsdfsdfwe"
+                android:textColor="@color/gray"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/check_in_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_blue_button"
+        android:text="Checkin to Place Order" />
+
+    <Button
+        android:id="@+id/view_past_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/selector_blue_button"
+        android:gravity="center"
+        android:text="View Past Order"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/notes_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/selector_blue_button"
+        android:gravity="center"
+        android:text="Notes"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/white" />
+
+
+    <LinearLayout
+        android:id="@+id/pri_linar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.salestrackmobileapp.android.custome_views.Custome_TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Privous Order" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@id/previous_order_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.ProfileActivity">
+    <!-- <item
+         android:id="@+id/miCompose"
+         android:icon="@drawable/home_icon"
+         app:showAsAction="ifRoom"
+         android:title="Compose">
+     </item>
+     <item
+         android:id="@+id/text"
+         app:showAsAction="ifRoom"
+         android:title="ss"
+         ></item>
+         <item
+         android:id="@+id/miProfile"
+         android:icon="@drawable/user_pic"
+         app:showAsAction="ifRoom|withText"
+         android:title="Profile">
+     </item>-->
+
+    <item
+        android:id="@+id/edit_profile"
+        android:title="Edit Profile" />
+    <item
+        android:id="@+id/logout_menu"
+        android:title="Logout" />
+</menu>

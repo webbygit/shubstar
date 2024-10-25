@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "891005697031",
+    "firebase_url": "https://sales-track-mobi-1493311833356.firebaseio.com",
+    "project_id": "sales-track-mobi-1493311833356",
+    "storage_bucket": "sales-track-mobi-1493311833356.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891005697031:android:205c01bbe2b155bf",
+        "android_client_info": {
+          "package_name": "com.salestrackmobileapp.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891005697031-rii58665kgugfsld8ltdms4u8fuavbtu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.salestrackmobileapp.android",
+            "certificate_hash": "28c954f204f9e9d14efa74e7a7de940eb5280eeb"
+          }
+        },
+        {
+          "client_id": "891005697031-na4g1vskbgjplp1ebkb6knthvg7d5qb4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFKVpLk1bfVMf0zk9zsxu-RahK5dlMEHc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891005697031-na4g1vskbgjplp1ebkb6knthvg7d5qb4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891005697031:android:4009c0f474c4c331",
+        "android_client_info": {
+          "package_name": "com.salestrackmobileapp.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891005697031-pd7s9e7582omb6j2op2rhi370ti68uvn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.salestrackmobileapp.android",
+            "certificate_hash": "28c954f204f9e9d14efa74e7a7de940eb5280eeb"
+          }
+        },
+        {
+          "client_id": "891005697031-na4g1vskbgjplp1ebkb6knthvg7d5qb4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFKVpLk1bfVMf0zk9zsxu-RahK5dlMEHc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891005697031-na4g1vskbgjplp1ebkb6knthvg7d5qb4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

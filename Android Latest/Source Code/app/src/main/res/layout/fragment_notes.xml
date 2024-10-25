@@ -1,0 +1,47 @@
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transback"
+    tools:context="com.salestrackmobileapp.android.fragments.NotesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transback"
+        android:orientation="vertical">
+
+        <!-- TODO: Update blank fragment layout -->
+        <com.salestrackmobileapp.android.custome_views.Custome_TextView
+            android:id="@+id/business_name_st"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/hello_blank_fragment"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@color/dark_dim_gray" />
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_blue_button"
+            android:text="SAVE" />
+
+        <com.salestrackmobileapp.android.custome_views.Custome_EditText
+            android:id="@+id/data_notes_et"
+            android:layout_width="fill_parent"
+            android:layout_height="300dp"
+            android:layout_margin="10dp"
+            android:background="@color/white"
+            android:gravity="top"
+            android:imeOptions="actionDone"
+            android:inputType="textMultiLine"
+            android:textColor="@color/black" />
+
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

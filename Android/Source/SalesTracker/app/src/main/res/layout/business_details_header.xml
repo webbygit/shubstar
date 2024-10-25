@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/llHeader"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_horizontal_margin"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/llBusiness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:orientation="horizontal">
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/ivBusinessImage"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:scaleType="centerCrop"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvBusinessTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:layout_toLeftOf="@+id/tvPhone"
+                android:singleLine="true"
+                android:text="Name"
+                android:textStyle="bold"
+                android:textSize="16dp"/>
+            <TextView
+                android:id="@+id/tvBusinessAddress1"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:textColor="@color/secondary_text"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_short"
+                android:singleLine="true"
+                android:text="Address 1"
+                android:textSize="12sp"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/tvBusinessAddress2"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:textColor="@color/secondary_text"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_extra_short"
+                android:singleLine="true"
+                android:text="Address 2"
+                android:textSize="12sp"
+                android:ellipsize="end"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/llCallAction"
+        android:layout_width="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:text="Contact Details"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:textSize="18dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary_text"
+                android:text="Contact person : "
+                android:gravity="center_vertical"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textStyle="bold"
+                android:textSize="13dp"/>
+
+            <TextView
+                android:id="@+id/tvContactName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary_text"
+                android:text="Shrey Agarwal"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textSize="12dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_short"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:paddingLeft="@dimen/margin_extra_short"
+                android:paddingRight="@dimen/margin_extra_short"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/viewCallAction"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center_horizontal"
+                    android:clickable="true"
+                    android:layout_marginTop="@dimen/margin_short"
+                    android:background="@drawable/bg_action_call">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_call"
+                        android:padding="@dimen/margin_short"
+                        android:background="?android:attr/selectableItemBackground"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/secondary_text"
+                    android:text="Ph. 9898989898"
+                    android:maxLines="2"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:layout_marginTop="@dimen/margin_short"
+                    android:textSize="10dp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/divider"
+                android:alpha="0.3"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:paddingLeft="@dimen/margin_extra_short"
+                android:paddingRight="@dimen/margin_extra_short"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/viewMailAction"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center_horizontal"
+                    android:clickable="true"
+                    android:layout_marginTop="@dimen/margin_short"
+                    android:background="@drawable/bg_action_call">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_mail"
+                        android:padding="@dimen/margin_short"
+                        android:background="?android:attr/selectableItemBackground"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/secondary_text"
+                    android:text="tarunkr1990@gmail.com"
+                    android:maxLines="2"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:layout_marginTop="@dimen/margin_short"
+                    android:textSize="10dp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/divider"
+                android:alpha="0.3"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:paddingLeft="@dimen/margin_extra_short"
+                android:paddingRight="@dimen/margin_extra_short"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/viewWebAction"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center_horizontal"
+                    android:clickable="true"
+                    android:layout_marginTop="@dimen/margin_short"
+                    android:background="@drawable/bg_action_call">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_web"
+                        android:padding="@dimen/margin_short"
+                        android:background="?android:attr/selectableItemBackground"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvWebsite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/secondary_text"
+                    android:text="www.google.com"
+                    android:maxLines="2"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:layout_marginTop="@dimen/margin_short"
+                    android:textSize="10dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:text="Orders History"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textStyle="bold"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:textSize="18dp"/>
+</LinearLayout>

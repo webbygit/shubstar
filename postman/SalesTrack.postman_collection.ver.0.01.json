@@ -1,0 +1,918 @@
+{
+	"id": "237113e7-5998-8ae8-66dd-a69441d92e43",
+	"name": "SalesTrack",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"owner": "1426210",
+			"lastUpdatedBy": "1426210",
+			"lastRevision": 2773719512,
+			"folder": null,
+			"id": "41fad715-4f72-42d3-a26c-6e5678bbf01b",
+			"name": "Local",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"70eac158-f2df-17f0-bfc9-dd11a0057ccd",
+				"0902634b-7a37-e0a7-b08e-f702e6258e36",
+				"f7a5a73e-8c37-90a6-7fdd-c4f09e9b16da",
+				"e5aa60f2-bc5d-573c-8c83-8b2cf8cb2e6d",
+				"de1065c8-b97e-568e-a578-f05ec7d2fd47",
+				"d8ebb2fd-7724-2151-da52-17e1f2f3c5b9",
+				"d9befc30-c3bf-2275-fd44-3e5d8972a3fe",
+				"8c142c96-bd08-272e-4b1e-81be4ff9fb2b",
+				"4a432f90-fd9d-4fbc-f229-b0776c85d05b",
+				"591a3153-5bbd-b711-290a-c2cd61a71d36",
+				"f0d5d019-8f4f-ea8d-6b23-93ad05c761ab",
+				"9a52fec1-d7a4-0e8e-ead3-1612384bb9b8",
+				"7a73d050-5bdb-3c69-3ca6-078ce7bb3c79"
+			],
+			"folders_order": []
+		},
+		{
+			"owner": "1426210",
+			"lastUpdatedBy": "1426210",
+			"lastRevision": 1161261224,
+			"folder": null,
+			"id": "226fcbc7-ad9b-880a-7196-285dc2beb07b",
+			"name": "Production",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [],
+			"folders_order": []
+		},
+		{
+			"owner": "1426210",
+			"lastUpdatedBy": "1426210",
+			"lastRevision": 2773588006,
+			"folder": null,
+			"id": "3102a24c-5085-8ded-1ad6-8823d18fdcd4",
+			"name": "Sandbox",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"d24f5675-c669-b240-11af-ac5f07bc0bcf",
+				"1fbb5fa6-cf54-99d5-9544-2eaddfe5cd7b",
+				"d85bf924-9f98-5872-f862-73ddeb975f23",
+				"5a21cc16-ef4f-ea04-1771-ed478978b29c",
+				"f697b1cc-d70b-24ea-bdcf-215dfffafa31",
+				"3c9cae74-446b-a8c3-af4e-75e173d7365f"
+			],
+			"folders_order": []
+		}
+	],
+	"folders_order": [
+		"41fad715-4f72-42d3-a26c-6e5678bbf01b",
+		"226fcbc7-ad9b-880a-7196-285dc2beb07b",
+		"3102a24c-5085-8ded-1ad6-8823d18fdcd4"
+	],
+	"timestamp": 0,
+	"owner": "1426210",
+	"public": false,
+	"requests": [
+		{
+			"folder": "41fad715-4f72-42d3-a26c-6e5678bbf01b",
+			"id": "0902634b-7a37-e0a7-b08e-f702e6258e36",
+			"name": "Login SuperAdmin",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "username",
+					"value": "superadmin@salestrackmobile.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "SalesTrackSA1!",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "DeviceId",
+					"value": "postman",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "DeviceType",
+					"value": "chrome",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Longitude",
+					"value": "0",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Latitude",
+					"value": "0",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"rawModeData": "{\r\n  \"Username\": \"jainrupesh@gmail.com\",\r\n  \"Password\": \"Rupesh1!\",\r\n  \"DeviceId\": \"postman\",\r\n  \"DeviceType\": \"windows10\",\r\n  \"Longitude\": 1,\r\n  \"Latitude\": 10\r\n}",
+			"descriptionFormat": "html",
+			"description": "http://localhost:38539/api/Account/Login",
+			"variables": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "https://localhost:44301/api/Account/Login",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43"
+		},
+		{
+			"id": "1fbb5fa6-cf54-99d5-9544-2eaddfe5cd7b",
+			"headers": "Content-Type: application/json\nAuthorization: bearer fGfomPTABArgrtkYipaNq-cBi3dVUznnHmSbxnxjJ41nLfAYwLPjAUFplqzZikk15FBdQ4-yci6h62jFwTuTJjRsXk3cVgVGjHV4wYm3SIMAdT3-A3cbv0hDMfmrnEOP-fXv15LdoAZlf7xPToGxEN56bW5wGwWk6YCYVWQN0IVPdlYzyAldTreC1INcfmcsJR0ZJepDcywHmS3kLuLOyh0ObMKpWEJ_jRVb6b0x3hLJZL0Y9KI_yUjtF2SPS0nOWdS6doHzaAlUtUdbKq2Jd_mELfoSjuuquBuKqBlTCkAp6orP5NuN0ywtgT6tWnctPNMPfUtJ35sj9zFn-olw4Yb2JbHwNc879ns-0MLzUDUBMjO8z-NPBz-cajcnspxZxlSh1k5WbowI5vcciNNu32I7POmyWj2Dszoa7rgjzlzAyZbQ73AdNtUWhO8-xQVOih3Sx7iKM3AF1ljhPEfyAvO7J5nkp05sW3YnYt46K_3umoXeVx5sx85w60Ritc3oArB5P674X4inpe9XhSrwaQ\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "bearer fGfomPTABArgrtkYipaNq-cBi3dVUznnHmSbxnxjJ41nLfAYwLPjAUFplqzZikk15FBdQ4-yci6h62jFwTuTJjRsXk3cVgVGjHV4wYm3SIMAdT3-A3cbv0hDMfmrnEOP-fXv15LdoAZlf7xPToGxEN56bW5wGwWk6YCYVWQN0IVPdlYzyAldTreC1INcfmcsJR0ZJepDcywHmS3kLuLOyh0ObMKpWEJ_jRVb6b0x3hLJZL0Y9KI_yUjtF2SPS0nOWdS6doHzaAlUtUdbKq2Jd_mELfoSjuuquBuKqBlTCkAp6orP5NuN0ywtgT6tWnctPNMPfUtJ35sj9zFn-olw4Yb2JbHwNc879ns-0MLzUDUBMjO8z-NPBz-cajcnspxZxlSh1k5WbowI5vcciNNu32I7POmyWj2Dszoa7rgjzlzAyZbQ73AdNtUWhO8-xQVOih3Sx7iKM3AF1ljhPEfyAvO7J5nkp05sW3YnYt46K_3umoXeVx5sx85w60Ritc3oArB5P674X4inpe9XhSrwaQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://salestrackapi.azurewebsites.net/api/Goal/GetAll",
+			"folder": "3102a24c-5085-8ded-1ad6-8823d18fdcd4",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520334539996,
+			"name": "GoalGetALL",
+			"description": "",
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43",
+			"responses": []
+		},
+		{
+			"id": "3c9cae74-446b-a8c3-af4e-75e173d7365f",
+			"headers": "Content-Type: application/json\nAuthorization: bearer fGfomPTABArgrtkYipaNq-cBi3dVUznnHmSbxnxjJ41nLfAYwLPjAUFplqzZikk15FBdQ4-yci6h62jFwTuTJjRsXk3cVgVGjHV4wYm3SIMAdT3-A3cbv0hDMfmrnEOP-fXv15LdoAZlf7xPToGxEN56bW5wGwWk6YCYVWQN0IVPdlYzyAldTreC1INcfmcsJR0ZJepDcywHmS3kLuLOyh0ObMKpWEJ_jRVb6b0x3hLJZL0Y9KI_yUjtF2SPS0nOWdS6doHzaAlUtUdbKq2Jd_mELfoSjuuquBuKqBlTCkAp6orP5NuN0ywtgT6tWnctPNMPfUtJ35sj9zFn-olw4Yb2JbHwNc879ns-0MLzUDUBMjO8z-NPBz-cajcnspxZxlSh1k5WbowI5vcciNNu32I7POmyWj2Dszoa7rgjzlzAyZbQ73AdNtUWhO8-xQVOih3Sx7iKM3AF1ljhPEfyAvO7J5nkp05sW3YnYt46K_3umoXeVx5sx85w60Ritc3oArB5P674X4inpe9XhSrwaQ\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "bearer fGfomPTABArgrtkYipaNq-cBi3dVUznnHmSbxnxjJ41nLfAYwLPjAUFplqzZikk15FBdQ4-yci6h62jFwTuTJjRsXk3cVgVGjHV4wYm3SIMAdT3-A3cbv0hDMfmrnEOP-fXv15LdoAZlf7xPToGxEN56bW5wGwWk6YCYVWQN0IVPdlYzyAldTreC1INcfmcsJR0ZJepDcywHmS3kLuLOyh0ObMKpWEJ_jRVb6b0x3hLJZL0Y9KI_yUjtF2SPS0nOWdS6doHzaAlUtUdbKq2Jd_mELfoSjuuquBuKqBlTCkAp6orP5NuN0ywtgT6tWnctPNMPfUtJ35sj9zFn-olw4Yb2JbHwNc879ns-0MLzUDUBMjO8z-NPBz-cajcnspxZxlSh1k5WbowI5vcciNNu32I7POmyWj2Dszoa7rgjzlzAyZbQ73AdNtUWhO8-xQVOih3Sx7iKM3AF1ljhPEfyAvO7J5nkp05sW3YnYt46K_3umoXeVx5sx85w60Ritc3oArB5P674X4inpe9XhSrwaQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://salestrackapi.azurewebsites.net/api/Variant/GetByProductID?id=1561",
+			"folder": "3102a24c-5085-8ded-1ad6-8823d18fdcd4",
+			"queryParams": [
+				{
+					"key": "id",
+					"value": "1561",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520334785809,
+			"name": "VariantGetALL",
+			"description": "",
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43",
+			"responses": []
+		},
+		{
+			"folder": "41fad715-4f72-42d3-a26c-6e5678bbf01b",
+			"id": "4a432f90-fd9d-4fbc-f229-b0776c85d05b",
+			"name": "Login Https",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"rawModeData": "{\r\n  \"Username\": \"jagrit.jain@devdarshan.info\",\r\n  \"Password\": \"Devdarshan1!\",\r\n  \"DeviceId\": \"postman\",\r\n  \"DeviceType\": \"windows10\",\r\n  \"Longitude\": 1,\r\n  \"Latitude\": 10\r\n}",
+			"descriptionFormat": "html",
+			"description": "https://localhost:44356/api/Account/Login",
+			"variables": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "https://localhost:44301/api/Account/Login",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43"
+		},
+		{
+			"folder": "41fad715-4f72-42d3-a26c-6e5678bbf01b",
+			"id": "591a3153-5bbd-b711-290a-c2cd61a71d36",
+			"name": "Logn Token",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "username",
+					"value": "salestrack.android@gmail.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "Standoid@901dev",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "salestrack.android@gmail.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "https://localhost:44301/api/Token?grant_type=password&username&email&password",
+			"variables": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "https://localhost:44301/api/Token",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43"
+		},
+		{
+			"folder": "3102a24c-5085-8ded-1ad6-8823d18fdcd4",
+			"id": "5a21cc16-ef4f-ea04-1771-ed478978b29c",
+			"name": "GoalGetBySalesman",
+			"dataMode": "params",
+			"data": null,
+			"auth": null,
+			"events": null,
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAuthorization: bearer blW_qBRv1fdlG4EI5Mn_pj5fICVvFFdp1rFRI65eWxRQjUvJRez1UkmaD-HWotrM3uzmy_KHMRB_z2-A5SAWtYna2MhooADuICVt0Ov4-7GZve8k6kZBMhhCpgrg6jjCWdHm949F2Wh-5tXV1JuoMxjZwkbwkwNZptZLpNkVHcog2bXWHxTzhy3I6mLHZKhAq5ePM0Hy2B6uxept40rqkl9jwiiruHu9t5S5FLn2_vguzd-OQB5uPu1ZkG8-3j3BChQYGu7H0SRrzkH5FPo0KnXkMJPDDCWMxbgj8BImCbAcTyxidE6R2A6BLwpSZYvlWAW0ncG77kwgky0Xyji10ShH2btmmpsQlBohhXLOYp-5DgCTfmvvWJYW5sSKAEFw1aM_DFvmFB7kW-ydXAecNryTrZ79i4lgQkn0bji-L0Jkz3m9x8rDimL0nSJv7jZ3ZxyMueS-pNF8QicFZCPjPaDgVEzBcbKwPaK3nK8SM8GNzLa8Fyi1iM6LdhtFW-duMdbHbyb8bCvcrIspSDmc7Q\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://salestrackapi.azurewebsites.net/api/Goal/GetBySalesman",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "bearer blW_qBRv1fdlG4EI5Mn_pj5fICVvFFdp1rFRI65eWxRQjUvJRez1UkmaD-HWotrM3uzmy_KHMRB_z2-A5SAWtYna2MhooADuICVt0Ov4-7GZve8k6kZBMhhCpgrg6jjCWdHm949F2Wh-5tXV1JuoMxjZwkbwkwNZptZLpNkVHcog2bXWHxTzhy3I6mLHZKhAq5ePM0Hy2B6uxept40rqkl9jwiiruHu9t5S5FLn2_vguzd-OQB5uPu1ZkG8-3j3BChQYGu7H0SRrzkH5FPo0KnXkMJPDDCWMxbgj8BImCbAcTyxidE6R2A6BLwpSZYvlWAW0ncG77kwgky0Xyji10ShH2btmmpsQlBohhXLOYp-5DgCTfmvvWJYW5sSKAEFw1aM_DFvmFB7kW-ydXAecNryTrZ79i4lgQkn0bji-L0Jkz3m9x8rDimL0nSJv7jZ3ZxyMueS-pNF8QicFZCPjPaDgVEzBcbKwPaK3nK8SM8GNzLa8Fyi1iM6LdhtFW-duMdbHbyb8bCvcrIspSDmc7Q",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43"
+		},
+		{
+			"folder": "41fad715-4f72-42d3-a26c-6e5678bbf01b",
+			"id": "70eac158-f2df-17f0-bfc9-dd11a0057ccd",
+			"name": "SaveCompany(Create)",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"rawModeData": "{\r\n  \"CompanyID\": 0,\r\n  \"EmailID\": \"atul@branko.in\",\r\n  \"AdminUserName\": \"atul@branko.in\",\r\n  \"CompanyCode\" : \"\",\r\n  \"Password\": \"Rupesh1!\",\r\n  \"companyName\": \"Branko India\",\r\n  \"Address1\": \"Partap Bagh\",\r\n  \"Address2\": \"\",\r\n  \"City\": \"Jalandhar\",\r\n  \"State\": \"Punjab\",\r\n  \"Zip\": \"144001\",\r\n  \"Country\": \"India\",\r\n  \"Latitude\": \"\",\r\n  \"Longitude\": \"\",\r\n  \"WebsiteName\": \"www.branko.om\",\r\n  \"ContactPersonName\": \"Atul jain\",\r\n  \"ContactPersonPhone\": \"9815948448\",\r\n  \"ContactPersonEmailID\": \"atul@branko.in\",\r\n  \"IsActive\": true,\r\n  \"UserRole\": \"Admin\"\r\n}",
+			"descriptionFormat": "html",
+			"description": "",
+			"variables": null,
+			"headers": "Authorization: bearer cArQhn2bC7VV9VhBYibCxxFotEi5_CVJ1FSbWP9cre69saRXfpNz_NSpQGv4adXY4mYFn24cEqjM7O_VKzsaAtgUbyuCTkUroIC2Un04G92KdnM0MFIvmCUh1yLmcxIbg_f27RYCGoD1pkhdu3yn0Njbx1UFs-UIogY9NtxpZ49b6G6qxNk5bngeRZ6AdXcmxk9ivY0mgIdz-HTnQKcf-dLPejfVUgLYaWNEv03KD7Vu9IiGNpRgMXzfNMfGQN2ahxD8TQEOztzvmcLODyUhmduoF6iQW-rtNOL9Z2nSsD7yJGpfRqJEm6r3qSkjDvltlCjQuNr3TXA9zVWpSSn_480E8LqFLE1n6zgpjgWOqJInbAKcOeGg-Ys3XnxKAZd3_AbDRdiCRqygW8F8xqFWP8ogLXs9NyAgPDLG9fS2MpuJkB4DzzT-LVldhiLkcGROF3A9nFrQrUiIQEEpj_HhRilN-W1NrvGuZZXcOy3Qkg6AURgqGJZqZe71sST0TpRpoNMJz-v0OyCzhsuqMiNH4GscJL6Kb7Uu7zyh2Lk9ebU\nContent-Type: application/json\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "http://localhost:38539/api/Company/SaveCompany",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer cArQhn2bC7VV9VhBYibCxxFotEi5_CVJ1FSbWP9cre69saRXfpNz_NSpQGv4adXY4mYFn24cEqjM7O_VKzsaAtgUbyuCTkUroIC2Un04G92KdnM0MFIvmCUh1yLmcxIbg_f27RYCGoD1pkhdu3yn0Njbx1UFs-UIogY9NtxpZ49b6G6qxNk5bngeRZ6AdXcmxk9ivY0mgIdz-HTnQKcf-dLPejfVUgLYaWNEv03KD7Vu9IiGNpRgMXzfNMfGQN2ahxD8TQEOztzvmcLODyUhmduoF6iQW-rtNOL9Z2nSsD7yJGpfRqJEm6r3qSkjDvltlCjQuNr3TXA9zVWpSSn_480E8LqFLE1n6zgpjgWOqJInbAKcOeGg-Ys3XnxKAZd3_AbDRdiCRqygW8F8xqFWP8ogLXs9NyAgPDLG9fS2MpuJkB4DzzT-LVldhiLkcGROF3A9nFrQrUiIQEEpj_HhRilN-W1NrvGuZZXcOy3Qkg6AURgqGJZqZe71sST0TpRpoNMJz-v0OyCzhsuqMiNH4GscJL6Kb7Uu7zyh2Lk9ebU"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43"
+		},
+		{
+			"folder": "41fad715-4f72-42d3-a26c-6e5678bbf01b",
+			"id": "7a73d050-5bdb-3c69-3ca6-078ce7bb3c79",
+			"name": "ChangePassword",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "username",
+					"value": "salestrack.and@gmail.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "Standoid@901dev",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "salestrack.and@gmail.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "https://localhost:44301/api/Token?grant_type=password&username&email&password",
+			"variables": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "https://localhost:44301/SalesPerson/ChangePasswordAdmin",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43"
+		},
+		{
+			"folder": "41fad715-4f72-42d3-a26c-6e5678bbf01b",
+			"id": "8c142c96-bd08-272e-4b1e-81be4ff9fb2b",
+			"name": "Login salestrack.and@gmail.com",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"rawModeData": "{\r\n  \"Username\": \"salestrack.android@gmail.com\",\r\n  \"Password\": \"Standoid@901dev\",\r\n  \"DeviceId\": \"postman\",\r\n  \"DeviceType\": \"chrome\",\r\n  \"FCMRegID\": \"1234\",\r\n  \"Longitude\": 0,\r\n  \"Latitude\": 0\r\n}",
+			"descriptionFormat": null,
+			"description": "https://localhost:44301/api/Account/Login",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\ngrant_type: password\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "https://localhost:44301/api/Account/Login",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "password",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43"
+		},
+		{
+			"folder": "41fad715-4f72-42d3-a26c-6e5678bbf01b",
+			"id": "9a52fec1-d7a4-0e8e-ead3-1612384bb9b8",
+			"name": "Business GetAll Https",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"rawModeData": "{\r\n  \"Username\": \"jainrupesh@gmail.com\",\r\n  \"Password\": \"Rupesh1!\",\r\n  \"DeviceId\": \"postman\",\r\n  \"DeviceType\": \"windows10\",\r\n  \"Longitude\": 1,\r\n  \"Latitude\": 10\r\n}",
+			"descriptionFormat": "html",
+			"description": "http://localhost:38539/api/Account/Login",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAuthorization: bearer 9bMhiyWixUpxoM_qPjXPvBoG0MDzoEttOAm8yQae10Zif5Xsktwu6sca9gP5X75eHMHlWB7uXtZYTSyjmrsooY2uQuGtLeQrgfDkYvC5ucAMmGOdXpUosmhd9Fw_VCTWF_hs56yM5uNKzi7UNYI51dgAJO4I-F3e03i6puK0IO_tFJDdQjSd9CliHXCDV5__GVio22Em_I-wiEwjbroIMm6GPpHHUkq5G0PlbNFHRfQ2PHlTB65MbnnMR3-lrZMQDHEUj3CNUhSgoT6g9yto5STPBXj7KhKgFJWDJJmWhIO-HRQVn8XnL7f3f_fvdT25W63yY5hggdAWmgqhXFHIpEFuvOc62Em4r23miUGOZ3pdyy5OL0Pr5A4b7CbTjGyXmznR72Yho1CYk6g0Fn5MeK9rXvwwyidKsznQ4VBEcQou7aQljp6rN3hamN6a0fPle4vTbJyIgonoGiBBVPOLVSpmyRPohsMKU-D9y7YVa0yvRBDZo7wnLcse1zMXgZmxr9HupTZLVLEuS_wY3gdCfGLlFKo-LfTs7ZEOPgQInus\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://localhost:44356/api/Business/GetAll",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "bearer 9bMhiyWixUpxoM_qPjXPvBoG0MDzoEttOAm8yQae10Zif5Xsktwu6sca9gP5X75eHMHlWB7uXtZYTSyjmrsooY2uQuGtLeQrgfDkYvC5ucAMmGOdXpUosmhd9Fw_VCTWF_hs56yM5uNKzi7UNYI51dgAJO4I-F3e03i6puK0IO_tFJDdQjSd9CliHXCDV5__GVio22Em_I-wiEwjbroIMm6GPpHHUkq5G0PlbNFHRfQ2PHlTB65MbnnMR3-lrZMQDHEUj3CNUhSgoT6g9yto5STPBXj7KhKgFJWDJJmWhIO-HRQVn8XnL7f3f_fvdT25W63yY5hggdAWmgqhXFHIpEFuvOc62Em4r23miUGOZ3pdyy5OL0Pr5A4b7CbTjGyXmznR72Yho1CYk6g0Fn5MeK9rXvwwyidKsznQ4VBEcQou7aQljp6rN3hamN6a0fPle4vTbJyIgonoGiBBVPOLVSpmyRPohsMKU-D9y7YVa0yvRBDZo7wnLcse1zMXgZmxr9HupTZLVLEuS_wY3gdCfGLlFKo-LfTs7ZEOPgQInus"
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43"
+		},
+		{
+			"id": "d24f5675-c669-b240-11af-ac5f07bc0bcf",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://salestrackapi.azurewebsites.net/api/Account/Login",
+			"folder": "3102a24c-5085-8ded-1ad6-8823d18fdcd4",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520334434779,
+			"name": "Login",
+			"description": "https://salestrackapi.azurewebsites.net/api/Account/Login",
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43",
+			"responses": [],
+			"rawModeData": "{\r\n  \"Username\": \"oswalmedia007@gmail.com\",\r\n  \"Password\": \"BrankoNewPwd@112\",\r\n  \"DeviceId\": \"Postman\",\r\n  \"DeviceType\": \"Postman\",\r\n  \"FCMRegID\": \"Postman\",\r\n  \"Longitude\": 0,\r\n  \"Latitude\": 0\r\n}"
+		},
+		{
+			"folder": "3102a24c-5085-8ded-1ad6-8823d18fdcd4",
+			"id": "d85bf924-9f98-5872-f862-73ddeb975f23",
+			"name": "GoalGetByDate",
+			"dataMode": "params",
+			"data": null,
+			"auth": null,
+			"events": null,
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAuthorization: bearer blW_qBRv1fdlG4EI5Mn_pj5fICVvFFdp1rFRI65eWxRQjUvJRez1UkmaD-HWotrM3uzmy_KHMRB_z2-A5SAWtYna2MhooADuICVt0Ov4-7GZve8k6kZBMhhCpgrg6jjCWdHm949F2Wh-5tXV1JuoMxjZwkbwkwNZptZLpNkVHcog2bXWHxTzhy3I6mLHZKhAq5ePM0Hy2B6uxept40rqkl9jwiiruHu9t5S5FLn2_vguzd-OQB5uPu1ZkG8-3j3BChQYGu7H0SRrzkH5FPo0KnXkMJPDDCWMxbgj8BImCbAcTyxidE6R2A6BLwpSZYvlWAW0ncG77kwgky0Xyji10ShH2btmmpsQlBohhXLOYp-5DgCTfmvvWJYW5sSKAEFw1aM_DFvmFB7kW-ydXAecNryTrZ79i4lgQkn0bji-L0Jkz3m9x8rDimL0nSJv7jZ3ZxyMueS-pNF8QicFZCPjPaDgVEzBcbKwPaK3nK8SM8GNzLa8Fyi1iM6LdhtFW-duMdbHbyb8bCvcrIspSDmc7Q\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://salestrackapi.azurewebsites.net/api/Goal/GetByDate?Date=2017-10-26",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [
+				{
+					"key": "Date",
+					"value": "2017-10-26",
+					"equals": true,
+					"enabled": true
+				}
+			],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "bearer blW_qBRv1fdlG4EI5Mn_pj5fICVvFFdp1rFRI65eWxRQjUvJRez1UkmaD-HWotrM3uzmy_KHMRB_z2-A5SAWtYna2MhooADuICVt0Ov4-7GZve8k6kZBMhhCpgrg6jjCWdHm949F2Wh-5tXV1JuoMxjZwkbwkwNZptZLpNkVHcog2bXWHxTzhy3I6mLHZKhAq5ePM0Hy2B6uxept40rqkl9jwiiruHu9t5S5FLn2_vguzd-OQB5uPu1ZkG8-3j3BChQYGu7H0SRrzkH5FPo0KnXkMJPDDCWMxbgj8BImCbAcTyxidE6R2A6BLwpSZYvlWAW0ncG77kwgky0Xyji10ShH2btmmpsQlBohhXLOYp-5DgCTfmvvWJYW5sSKAEFw1aM_DFvmFB7kW-ydXAecNryTrZ79i4lgQkn0bji-L0Jkz3m9x8rDimL0nSJv7jZ3ZxyMueS-pNF8QicFZCPjPaDgVEzBcbKwPaK3nK8SM8GNzLa8Fyi1iM6LdhtFW-duMdbHbyb8bCvcrIspSDmc7Q",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43"
+		},
+		{
+			"folder": "41fad715-4f72-42d3-a26c-6e5678bbf01b",
+			"id": "d8ebb2fd-7724-2151-da52-17e1f2f3c5b9",
+			"name": "Login Https  jagrit copy",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "username",
+					"value": "jagrit.jain@devdarshan.info",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "Devdarshan1!",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "https://localhost:44356/api/Account/Login",
+			"variables": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "https://localhost:44301/api/Account/Login",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43"
+		},
+		{
+			"folder": "41fad715-4f72-42d3-a26c-6e5678bbf01b",
+			"id": "d9befc30-c3bf-2275-fd44-3e5d8972a3fe",
+			"name": "Login Https  jagrit copy",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "username",
+					"value": "jagrit.jain@devdarshan.info",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "Devdarshan1!",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "https://localhost:44356/api/Account/Login",
+			"variables": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "https://localhost:44301/api/Account/Login",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43"
+		},
+		{
+			"folder": "41fad715-4f72-42d3-a26c-6e5678bbf01b",
+			"id": "de1065c8-b97e-568e-a578-f05ec7d2fd47",
+			"name": "Login Https  jagrit copy",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "username",
+					"value": "jagrit.jain@devdarshan.info",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "Devdarshan1!",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "https://localhost:44356/api/Account/Login",
+			"variables": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "https://localhost:44301/api/Account/Login",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43"
+		},
+		{
+			"folder": "41fad715-4f72-42d3-a26c-6e5678bbf01b",
+			"id": "e5aa60f2-bc5d-573c-8c83-8b2cf8cb2e6d",
+			"name": "Login Https  jagrit",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "username",
+					"value": "jagrit.jain@devdarshan.info",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "Devdarshan1!",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "https://localhost:44356/api/Account/Login",
+			"variables": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "https://localhost:44301/api/Account/Login",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43"
+		},
+		{
+			"folder": "41fad715-4f72-42d3-a26c-6e5678bbf01b",
+			"id": "f0d5d019-8f4f-ea8d-6b23-93ad05c761ab",
+			"name": "Business GetAll ",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"rawModeData": "{\r\n  \"Username\": \"jainrupesh@gmail.com\",\r\n  \"Password\": \"Rupesh1!\",\r\n  \"DeviceId\": \"postman\",\r\n  \"DeviceType\": \"windows10\",\r\n  \"Longitude\": 1,\r\n  \"Latitude\": 10\r\n}",
+			"descriptionFormat": "html",
+			"description": "http://localhost:38539/api/Account/Login",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAuthorization: bearer 9bMhiyWixUpxoM_qPjXPvBoG0MDzoEttOAm8yQae10Zif5Xsktwu6sca9gP5X75eHMHlWB7uXtZYTSyjmrsooY2uQuGtLeQrgfDkYvC5ucAMmGOdXpUosmhd9Fw_VCTWF_hs56yM5uNKzi7UNYI51dgAJO4I-F3e03i6puK0IO_tFJDdQjSd9CliHXCDV5__GVio22Em_I-wiEwjbroIMm6GPpHHUkq5G0PlbNFHRfQ2PHlTB65MbnnMR3-lrZMQDHEUj3CNUhSgoT6g9yto5STPBXj7KhKgFJWDJJmWhIO-HRQVn8XnL7f3f_fvdT25W63yY5hggdAWmgqhXFHIpEFuvOc62Em4r23miUGOZ3pdyy5OL0Pr5A4b7CbTjGyXmznR72Yho1CYk6g0Fn5MeK9rXvwwyidKsznQ4VBEcQou7aQljp6rN3hamN6a0fPle4vTbJyIgonoGiBBVPOLVSpmyRPohsMKU-D9y7YVa0yvRBDZo7wnLcse1zMXgZmxr9HupTZLVLEuS_wY3gdCfGLlFKo-LfTs7ZEOPgQInus\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "http://localhost:38539/api/Business/GetAll",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "bearer 9bMhiyWixUpxoM_qPjXPvBoG0MDzoEttOAm8yQae10Zif5Xsktwu6sca9gP5X75eHMHlWB7uXtZYTSyjmrsooY2uQuGtLeQrgfDkYvC5ucAMmGOdXpUosmhd9Fw_VCTWF_hs56yM5uNKzi7UNYI51dgAJO4I-F3e03i6puK0IO_tFJDdQjSd9CliHXCDV5__GVio22Em_I-wiEwjbroIMm6GPpHHUkq5G0PlbNFHRfQ2PHlTB65MbnnMR3-lrZMQDHEUj3CNUhSgoT6g9yto5STPBXj7KhKgFJWDJJmWhIO-HRQVn8XnL7f3f_fvdT25W63yY5hggdAWmgqhXFHIpEFuvOc62Em4r23miUGOZ3pdyy5OL0Pr5A4b7CbTjGyXmznR72Yho1CYk6g0Fn5MeK9rXvwwyidKsznQ4VBEcQou7aQljp6rN3hamN6a0fPle4vTbJyIgonoGiBBVPOLVSpmyRPohsMKU-D9y7YVa0yvRBDZo7wnLcse1zMXgZmxr9HupTZLVLEuS_wY3gdCfGLlFKo-LfTs7ZEOPgQInus"
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43"
+		},
+		{
+			"id": "f697b1cc-d70b-24ea-bdcf-215dfffafa31",
+			"headers": "Authorization: bearer fGfomPTABArgrtkYipaNq-cBi3dVUznnHmSbxnxjJ41nLfAYwLPjAUFplqzZikk15FBdQ4-yci6h62jFwTuTJjRsXk3cVgVGjHV4wYm3SIMAdT3-A3cbv0hDMfmrnEOP-fXv15LdoAZlf7xPToGxEN56bW5wGwWk6YCYVWQN0IVPdlYzyAldTreC1INcfmcsJR0ZJepDcywHmS3kLuLOyh0ObMKpWEJ_jRVb6b0x3hLJZL0Y9KI_yUjtF2SPS0nOWdS6doHzaAlUtUdbKq2Jd_mELfoSjuuquBuKqBlTCkAp6orP5NuN0ywtgT6tWnctPNMPfUtJ35sj9zFn-olw4Yb2JbHwNc879ns-0MLzUDUBMjO8z-NPBz-cajcnspxZxlSh1k5WbowI5vcciNNu32I7POmyWj2Dszoa7rgjzlzAyZbQ73AdNtUWhO8-xQVOih3Sx7iKM3AF1ljhPEfyAvO7J5nkp05sW3YnYt46K_3umoXeVx5sx85w60Ritc3oArB5P674X4inpe9XhSrwaQ\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer fGfomPTABArgrtkYipaNq-cBi3dVUznnHmSbxnxjJ41nLfAYwLPjAUFplqzZikk15FBdQ4-yci6h62jFwTuTJjRsXk3cVgVGjHV4wYm3SIMAdT3-A3cbv0hDMfmrnEOP-fXv15LdoAZlf7xPToGxEN56bW5wGwWk6YCYVWQN0IVPdlYzyAldTreC1INcfmcsJR0ZJepDcywHmS3kLuLOyh0ObMKpWEJ_jRVb6b0x3hLJZL0Y9KI_yUjtF2SPS0nOWdS6doHzaAlUtUdbKq2Jd_mELfoSjuuquBuKqBlTCkAp6orP5NuN0ywtgT6tWnctPNMPfUtJ35sj9zFn-olw4Yb2JbHwNc879ns-0MLzUDUBMjO8z-NPBz-cajcnspxZxlSh1k5WbowI5vcciNNu32I7POmyWj2Dszoa7rgjzlzAyZbQ73AdNtUWhO8-xQVOih3Sx7iKM3AF1ljhPEfyAvO7J5nkp05sW3YnYt46K_3umoXeVx5sx85w60Ritc3oArB5P674X4inpe9XhSrwaQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://salestrackapi.azurewebsites.net/api/Order/GetAll?Status=All",
+			"folder": "3102a24c-5085-8ded-1ad6-8823d18fdcd4",
+			"queryParams": [
+				{
+					"key": "Status",
+					"value": "All",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520334466672,
+			"name": "OrderGetAll",
+			"description": null,
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43",
+			"responses": []
+		},
+		{
+			"folder": "41fad715-4f72-42d3-a26c-6e5678bbf01b",
+			"id": "f7a5a73e-8c37-90a6-7fdd-c4f09e9b16da",
+			"name": "Login jainrupesh@gmail.com",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "username",
+					"value": "jainrupesh@gmail.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "Rupesh1!",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "DeviceId",
+					"value": "postman",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "DeviceType",
+					"value": "chrome",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Longitude",
+					"value": "0",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Latitude",
+					"value": "0",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": "http://localhost:38539/api/Account/Login",
+			"variables": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "http://localhost:44301/api/Account/Login",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "237113e7-5998-8ae8-66dd-a69441d92e43"
+		}
+	]
+}

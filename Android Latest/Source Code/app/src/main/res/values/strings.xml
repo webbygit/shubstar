@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">SalesTrackApp</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="orderhistory">Your Orders</string>
+
+
+    <string name="search_product">Search product by name,number</string>
+    <string name="discount_voucher_enable_location_enter_manually">Enable locations or enter location manually?</string>
+    <string name="discount_enter_manually">Enter Manually</string>
+    <string name="unable_connect_internet">Unable to connect to internet.\nTry again?</string>
+    <string name="discount_enable">Enable</string>
+
+    <string name="landing_unable_fetch_location">Unable to fetch your location</string>
+    <string name="please_wait">Please Wait</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="search_hint"></string>
+    <string name="Rs">\u20B9</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+ <!-- tableView String -->
+    <string name="sort_ascending">Sort Ascending</string>
+    <string name="sort_descending">Sort Descending</string>
+    <string name="clear_sorting">Clear</string>
+    <string name="row_show">Show 5. Row</string>
+    <string name="row_hide">Hide 5. Row</string>
+
+</resources>

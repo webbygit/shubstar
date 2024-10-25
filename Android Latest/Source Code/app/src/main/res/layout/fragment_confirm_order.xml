@@ -1,0 +1,303 @@
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.salestrackmobileapp.android.fragments.ConfirmOrderFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/productsRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/grey" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal">
+
+                <com.salestrackmobileapp.android.custome_views.Custome_BoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="Arrived By"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/black" />
+
+                <com.salestrackmobileapp.android.custome_views.Custome_BoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:text="May 16 2017"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/dark_dim_gray" />
+            </LinearLayout>
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/tt1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_toLeftOf="@+id/proceed_img1"
+                android:gravity="center_vertical"
+                android:text="$8.00"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/dark_dim_gray"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/proceed_img1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:src="@drawable/arrow" />
+
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/grey" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical">
+
+            <com.salestrackmobileapp.android.custome_views.Custome_BoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="Address"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/black" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/proceed_img3"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingTop="5dp">
+
+                <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                    android:id="@+id/tt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Room 67"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/dark_dim_gray"
+                    android:textStyle="bold" />
+
+                <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                    android:id="@+id/tt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="14 Tottenham Court Road"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/dark_dim_gray"
+                    android:textStyle="bold" />
+
+                <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                    android:id="@+id/tt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="London, England"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/dark_dim_gray"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/proceed_img3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:src="@drawable/arrow" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/grey" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:weightSum="1">
+
+            <com.salestrackmobileapp.android.custome_views.Custome_BoldTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.3"
+                android:text="SUMMARY"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/black" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_weight="0.3"
+                        android:text="SUMMARY"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/dark_dim_gray" />
+
+                    <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_weight="0.3"
+                        android:text="$45.00"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/dark_dim_gray" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_weight="0.3"
+                        android:text="DELIVERY"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/dark_dim_gray" />
+
+                    <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_weight="0.3"
+                        android:text="$8.00"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/dark_dim_gray" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:padding="10dp">
+
+                        <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_weight="0.3"
+                            android:text="TAX"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@color/dark_dim_gray" />
+
+                        <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_weight="0.3"
+                            android:text="$3.00"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@color/dark_dim_gray" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/dark_dim_gray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <com.salestrackmobileapp.android.custome_views.Custome_BoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_weight="0.3"
+                        android:text="TOTAL"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/black" />
+
+                    <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_weight="0.3"
+                        android:text="$56.00"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/dark_dim_gray" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/place_order_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_blue_button"
+            android:text="Confirm Order"
+            android:textAppearance="?android:textAppearanceMedium" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

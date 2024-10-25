@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+
+    android:background="@drawable/all_border_grey"
+    android:orientation="vertical"
+    android:padding="5dp"
+    card_view:cardCornerRadius="3dp"
+    card_view:cardElevation="4dp"
+    card_view:cardUseCompatPadding="true"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.3"
+
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/product_item_img"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:src="@drawable/calendar_icon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.65"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/product_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Main Title"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/dark_dim_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                    android:id="@+id/mrp_product_tv"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+
+                    android:minLines="1"
+                    android:text="Sub Title"
+                    android:textColor="@color/dark_dim_gray"
+                    android:textSize="12sp" />
+
+                <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                    android:id="@+id/mrp_product_tv_original"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="end|center_vertical"
+                    android:text="12344.00"
+                    android:textColor="#a5a5a5"
+                    android:textSize="12sp"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_instock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="In stock"
+                android:textColor="@color/green"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                android:theme="@style/SwitchCompatTheme"
+
+                />
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/category_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:maxLines="3"
+                android:minLines="2"
+                android:text="Sub Title"
+                android:textColor="@color/dark_dim_gray"
+                android:textSize="12dp" />
+
+            <Spinner
+                android:id="@+id/measurmentSpn"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_drop_down_normal"
+                android:textColor="@color/black"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/addtocart"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_blue_button"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="add to cart"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="0.05"
+            android:src="@drawable/arrow" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:background="@color/gray_underline"
+        android:visibility="gone" />
+</LinearLayout>
+

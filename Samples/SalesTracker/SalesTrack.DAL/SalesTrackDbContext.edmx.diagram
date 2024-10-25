@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="45335efa3aeb4bbd8627ddcda35dab28" Name="Diagram1">
+        <EntityTypeShape EntityType="salestrackdbModel.brand" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.business" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.deal_product_mapping" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.deal" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.feature" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.plan_detail" Width="1.5" PointX="8.25" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.plan_master" Width="1.5" PointX="6" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.product_category" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.product_images" Width="1.5" PointX="7.5" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.product" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.salesperson" Width="1.5" PointX="8.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.salesperson_business_mapping" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.user_login_history" Width="1.5" PointX="5.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.user_permissions" Width="1.5" PointX="5.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.user_profile" Width="1.5" PointX="0.875" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.user_role_mapping" Width="1.5" PointX="5.25" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.user_roles" Width="1.5" PointX="3" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="salestrackdbModel.user" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
+        <AssociationConnector Association="salestrackdbModel.FK_Business_UserProfileID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_Salesperson_Business_Mapping_BusinessID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_DealProductMapping_DealID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_DealProductMapping_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_Deals_UserProfileID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_plan_detail_featureID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_UserPermissions_FeatureID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_plan_detail_planID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_Product_ProductCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_ProductCategory_UserProfileID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_ProductImage_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_Product_UserProfileID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_Salesperson_Business_Mapping_SalesPersonID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_SalesPerson_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_SalesPerson_UserProfileID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_LoginHistory_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_UserPermissions_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_Users_Userprofileid" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_user_role_mapping_roleid" ManuallyRouted="false" />
+        <AssociationConnector Association="salestrackdbModel.FK_user_role_mapping_userID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

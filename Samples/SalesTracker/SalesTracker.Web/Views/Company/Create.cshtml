@@ -1,0 +1,103 @@
+﻿@model SalesTracker.Model.Company
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Company</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Company</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DomainName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DomainName)
+            @Html.ValidationMessageFor(model => model.DomainName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsActive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+
+        <p>
+            <div style="border:solid 1px;padding: 15px 15px 15px 15px">
+                <b>Admin Details</b>
+                <br /><br />
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.CompanyAdmin.EmailId)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.CompanyAdmin.EmailId)
+                    @Html.ValidationMessageFor(model => model.CompanyAdmin.EmailId)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.CompanyAdmin.Password)
+                </div>
+                <div class="editor-field">
+                    @Html.PasswordFor(model => model.CompanyAdmin.Password)
+                    @Html.ValidationMessageFor(model => model.CompanyAdmin.Password)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.CompanyAdmin.PasswordSalt)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.CompanyAdmin.PasswordSalt)
+                    @Html.ValidationMessageFor(model => model.CompanyAdmin.PasswordSalt)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.CompanyAdmin.RoleId)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(m => m.CompanyAdmin.RoleId, new { @type = "number", min = "2", max = "10" })
+                    @Html.ValidationMessageFor(model => model.CompanyAdmin.RoleId)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.CompanyAdmin.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.CompanyAdmin.Name)
+                    @Html.ValidationMessageFor(model => model.CompanyAdmin.Name)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.CompanyAdmin.IsActive)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.CompanyAdmin.IsActive)
+                    @Html.ValidationMessageFor(model => model.CompanyAdmin.IsActive)
+                </div>
+
+            </div>
+        </p>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26F8EE17-D574-4A91-A596-78B1BFE94BC7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SalesTracker.Database</RootNamespace>
+    <AssemblyName>SalesTracker.Database</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="brand.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="business.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="deal.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="deal_product_mapping.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="feature.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="plan_detail.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="plan_master.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="product.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="product_category.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="product_images.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="salesperson.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="salesperson_business_mapping.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="salestrackdbEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>salestrackdbEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="salestrackdbEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="salestrackdbEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>salestrackdbEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="user.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user_login_history.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user_permissions.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user_profile.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user_roles.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user_role_mapping.cs">
+      <DependentUpon>salestrackdbEntities.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="salestrackdbEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>salestrackdbEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="salestrackdbEntities.edmx.diagram">
+      <DependentUpon>salestrackdbEntities.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="salestrackdbEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>salestrackdbEntities.edmx</DependentUpon>
+      <LastGenOutput>salestrackdbEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="salestrackdbEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>salestrackdbEntities.edmx</DependentUpon>
+      <LastGenOutput>salestrackdbEntities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

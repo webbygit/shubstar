@@ -1,0 +1,41 @@
+﻿@model SalesTracker.Model.Users
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@if (Session["Users"] != null)
+{ 
+    var user=Session["Users"] as SalesTracker.Model.Users;
+     
+    <div>
+        Welcome  @user.EmailId
+    </div>
+
+    if (user.RoleId == 1)
+    {
+        <p>
+           @Html.ActionLink("Create Company", "Create", "Company", null, new { id = user.CompanyId });
+        </p>
+    }
+    else if (user.RoleId == 2)
+    { 
+        <p>
+           @Html.ActionLink("Create Sales Person", "Register", "User", null, new { id = user.CompanyId });
+        </p>
+     <p>
+         @Html.ActionLink("Create Business", "Create", "Busienss", null, new { id = user.ID }) 
+    </p>
+    }
+}
+else
+{
+    <p>
+        @Html.ActionLink("Log In", "login", "user", null, new { id = 1 });
+    </p>
+       @*<p>
+         @Html.ActionLink("Create Business", "Create", "Busienss", null, new { id = Model.ID }) 
+    </p>*@
+}

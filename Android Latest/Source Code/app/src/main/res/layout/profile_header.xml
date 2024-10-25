@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:gravity="center_vertical"
+    android:paddingBottom="15dp"
+    android:paddingTop="15dp">
+
+    <ImageView
+        android:id="@+id/home_icon_img"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:paddingLeft="10dp"
+        android:src="@drawable/home_icon" />
+    <!--android:layout_marginLeft="5dp"-->
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+
+        <com.salestrackmobileapp.android.custome_views.Custome_TextView
+            android:id="@+id/action_bar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="TITLE "
+
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/white" />
+
+        <com.salestrackmobileapp.android.custome_views.Custome_TextView
+            android:id="@+id/total_items_bracket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@+id/action_bar_title"
+            android:paddingLeft="5dp"
+            android:text="(25)"
+            android:textAppearance="?android:textAppearanceMedium"
+
+            android:textColor="@color/back_white"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:paddingRight="10dp">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.salestrackmobileapp.android.custome_views.Custome_TextView
+                android:id="@+id/total_items"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/back_white" />
+
+            <ImageView
+                android:id="@+id/cart_img"
+                android:layout_width="30dp"
+                android:layout_height="26dp"
+                android:src="@drawable/whitecart" />
+
+            <ImageView
+                android:id="@+id/add_product"
+                android:layout_width="30dp"
+                android:layout_height="28dp"
+                android:src="@drawable/add"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/setting_dots_img"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/threedots"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

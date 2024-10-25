@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="152dp"
+    android:id="@+id/rootView"
+    android:foreground="?android:attr/selectableItemBackground">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="152dp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:orientation="horizontal">
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/ivProductImage"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:background="@color/colorAccent"
+            android:scaleType="centerCrop"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvProductName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:text="Name"/>
+
+            <TextView
+                android:id="@+id/tvProductPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:layout_below="@id/tvProductName"
+                android:layout_marginTop="5dp"
+                android:text="$ 20.0"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/tvProductKeyword"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/secondary_text"
+                android:gravity="center_vertical"
+                android:layout_below="@id/tvProductPrice"
+                android:layout_above="@+id/tvProductDeal"
+                android:text="Product keywords"
+                android:singleLine="true"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/tvProductDeal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary_text"
+                android:gravity="center_vertical"
+                android:text="Deal"
+                android:layout_alignParentBottom="true"
+                android:singleLine="true"
+                android:ellipsize="end"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        android:alpha="0.5"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>
